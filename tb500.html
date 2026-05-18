@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TB-500 — Thymosin Beta-4 | Helix-Pharm</title>
+  <meta name="description" content="TB-500 (Thymosin Beta-4) — Repair. Recover. Perform. 10mg Research Use Only. Tissue repair, angiogenesis, anti-inflammatory.">
+  <link rel="stylesheet" href="css/styles.css?v=3">
+  <style>
+    .pd-hero { background: #eef4fb; padding: 2.5rem 1.5rem; }
+    .pd-hero-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    @media(max-width:640px){ .pd-hero-inner{ grid-template-columns:1fr; gap:1.5rem; } }
+    .pd-vial-wrap { display:flex; justify-content:center; align-items:center; padding:1rem; }
+    .pd-info h1 { font-size:clamp(1.8rem,3vw,2.4rem); font-weight:900; color:var(--black); margin-bottom:.3rem; }
+    .pd-info .pd-subtitle { font-size:.88rem; color:#0b4c8a; font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin-bottom:.35rem; }
+    .pd-info .pd-tagline-big { font-size:1.1rem; font-weight:800; color:#0b2e4a; margin-bottom:.8rem; letter-spacing:.02em; }
+    .pd-info .pd-desc { font-size:.9rem; color:var(--text-mid); margin-bottom:1.4rem; line-height:1.65; }
+    .pd-price-row { display:flex; align-items:center; gap:1.2rem; margin-bottom:1.2rem; flex-wrap:wrap; }
+    .pd-price { font-size:2rem; font-weight:900; color:var(--black); }
+    .pd-badge { background:#0b2e4a; color:white; font-size:.72rem; font-weight:700; padding:.3rem .8rem; border-radius:50px; letter-spacing:.07em; text-transform:uppercase; }
+    .pd-atc { display:block; width:100%; background:var(--black); color:white; text-align:center; padding:.9rem; border:none; border-radius:8px; font-size:1rem; font-weight:700; cursor:pointer; transition:opacity .2s; margin-bottom:.8rem; }
+    .pd-atc:hover { opacity:.82; }
+    .pd-atc.added { background:#1a6e3c; }
+    .pd-fda-bar { background:#fff3cd; border:1px solid #ffc107; border-radius:8px; padding:.75rem 1rem; font-size:.78rem; color:#856404; font-weight:600; }
+
+    /* KEY BENEFITS STRIP */
+    .kb-strip { background:#0b2e4a; padding:2rem 1.5rem; }
+    .kb-grid { max-width:1000px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
+    @media(max-width:700px){ .kb-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:420px){ .kb-grid{ grid-template-columns:1fr; } }
+    .kb-item { display:flex; align-items:flex-start; gap:.8rem; }
+    .kb-icon { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
+    .kb-item h4 { color:white; font-size:.82rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; margin-bottom:.25rem; }
+    .kb-item p  { color:rgba(255,255,255,.6); font-size:.78rem; line-height:1.45; }
+
+    /* SECTIONS */
+    .pd-section { max-width:1000px; margin:0 auto; padding:2.8rem 1.5rem; }
+    .pd-section h2 { font-size:1.25rem; font-weight:900; color:var(--black); text-transform:uppercase; letter-spacing:.08em; margin-bottom:1.2rem; padding-bottom:.6rem; border-bottom:3px solid #0b2e4a; }
+
+    /* What is */
+    .what-grid { display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:start; }
+    @media(max-width:640px){ .what-grid{ grid-template-columns:1fr; } }
+    .check-list { display:flex; flex-direction:column; gap:.6rem; margin:1rem 0; }
+    .check-item { display:flex; align-items:flex-start; gap:.6rem; font-size:.88rem; color:var(--text-mid); }
+    .check-item::before { content:'✅'; flex-shrink:0; }
+    .quote-box { background:#0b2e4a; color:white; border-radius:12px; padding:1.4rem; font-style:italic; font-size:.88rem; line-height:1.6; }
+    .quote-box cite { display:block; margin-top:.8rem; font-style:normal; font-size:.75rem; color:rgba(255,255,255,.6); font-weight:600; }
+
+    /* Research grid */
+    .research-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+    @media(max-width:700px){ .research-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:440px){ .research-grid{ grid-template-columns:1fr; } }
+    .research-card { background:white; border:1px solid var(--border); border-radius:12px; padding:1.1rem; }
+    .research-card .rc-icon { font-size:1.5rem; margin-bottom:.5rem; }
+    .research-card h4 { font-size:.83rem; font-weight:800; color:#0b2e4a; text-transform:uppercase; letter-spacing:.04em; margin-bottom:.4rem; }
+    .research-card p  { font-size:.8rem; color:var(--text-mid); line-height:1.5; }
+    .research-note { font-size:.75rem; color:var(--text-light); margin-top:1rem; font-style:italic; }
+
+    /* How it works */
+    .hiw-list { display:flex; flex-direction:column; gap:.9rem; }
+    .hiw-item { display:flex; align-items:flex-start; gap:.9rem; background:white; border:1px solid var(--border); border-radius:10px; padding:1rem; }
+    .hiw-num { width:32px; height:32px; background:#0b2e4a; color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.82rem; font-weight:800; flex-shrink:0; }
+    .hiw-item p { font-size:.88rem; color:var(--text-mid); line-height:1.55; }
+
+    /* Dosage */
+    .dosage-cols { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
+    @media(max-width:680px){ .dosage-cols{ grid-template-columns:1fr; } }
+    .dosage-card { background:white; border:2px solid var(--border); border-radius:12px; padding:1.3rem; }
+    .dosage-card.featured { border-color:#0b2e4a; }
+    .dosage-card h4 { font-size:.8rem; font-weight:800; text-transform:uppercase; letter-spacing:.07em; margin-bottom:.8rem; color:#0b2e4a; }
+    .dosage-amount { font-size:1.6rem; font-weight:900; color:var(--black); margin-bottom:.3rem; }
+    .dosage-card ul { padding-left:0; display:flex; flex-direction:column; gap:.35rem; }
+    .dosage-card ul li { font-size:.82rem; color:var(--text-mid); display:flex; align-items:center; gap:.4rem; }
+    .dosage-card ul li::before { content:'•'; color:#0b2e4a; font-weight:900; }
+    .cycle-note { background:#e8f0fe; border:1px solid #b3c6f7; border-radius:8px; padding:.8rem 1rem; font-size:.82rem; color:#1a3a8a; margin-top:1rem; }
+
+    /* Admin methods */
+    .admin-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; }
+    @media(max-width:640px){ .admin-grid{ grid-template-columns:repeat(2,1fr); } }
+    .admin-card { background:white; border:1px solid var(--border); border-radius:10px; padding:1rem; text-align:center; }
+    .admin-card .a-icon { font-size:1.6rem; margin-bottom:.5rem; }
+    .admin-card h4 { font-size:.75rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:#0b2e4a; margin-bottom:.3rem; }
+    .admin-card p  { font-size:.75rem; color:var(--text-mid); line-height:1.4; }
+    .store-note { background:#f8d7da; border:1px solid #f5c6cb; border-radius:8px; padding:.7rem 1rem; font-size:.8rem; color:#721c24; margin-top:1rem; font-weight:600; }
+
+    /* Ideal for */
+    .ideal-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:.7rem; }
+    @media(max-width:480px){ .ideal-grid{ grid-template-columns:1fr; } }
+    .ideal-item { display:flex; align-items:center; gap:.6rem; background:white; border:1px solid var(--border); border-radius:8px; padding:.75rem 1rem; font-size:.87rem; font-weight:500; }
+    .ideal-item::before { content:'✓'; color:#0b2e4a; font-weight:900; font-size:1rem; }
+
+    /* Side effects */
+    .se-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; align-items:start; }
+    @media(max-width:580px){ .se-grid{ grid-template-columns:1fr; } }
+    .se-profile { background:#d4edda; border:1px solid #c3e6cb; border-radius:12px; padding:1.2rem; }
+    .se-profile h4 { color:#155724; font-size:.85rem; font-weight:800; margin-bottom:.5rem; text-transform:uppercase; }
+    .se-profile p  { color:#155724; font-size:.85rem; }
+    .se-mild-list { background:white; border:1px solid var(--border); border-radius:12px; padding:1.2rem; }
+    .se-mild-list h4 { font-size:.85rem; font-weight:800; margin-bottom:.8rem; color:var(--black); text-transform:uppercase; }
+    .se-mild-list ul { display:flex; flex-direction:column; gap:.4rem; }
+    .se-mild-list ul li { font-size:.85rem; color:var(--text-mid); display:flex; align-items:center; gap:.5rem; }
+    .se-mild-list ul li::before { content:'•'; color:#856404; }
+
+    /* Tagline banner */
+    .tagline-banner { background:#0b2e4a; padding:2rem 1.5rem; text-align:center; }
+    .tagline-banner h3 { color:white; font-size:clamp(1rem,2.5vw,1.4rem); font-weight:900; letter-spacing:.04em; }
+    .tagline-banner p  { color:rgba(255,255,255,.7); font-size:.9rem; margin-top:.4rem; }
+
+    /* Disclaimer */
+    .final-disclaimer { background:#1a1a1a; color:rgba(255,255,255,.75); padding:1.5rem; font-size:.78rem; line-height:1.7; text-align:center; }
+    .final-disclaimer strong { color:white; }
+
+    /* Back link */
+    .back-link { display:inline-flex; align-items:center; gap:.4rem; font-size:.88rem; font-weight:600; color:var(--text-mid); padding:.5rem 0; transition:color .2s; }
+    .back-link:hover { color:var(--black); }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="header-inner">
+    <button class="hamburger" id="menuBtn"><span></span><span></span><span></span></button>
+    <a href="index.html" class="logo">
+      <div class="logo-img-wrap" style="background:transparent;padding:0;border-radius:0;">
+        <img src="61205B8A-CA41-4D01-BDCD-774BFB032CE1.png" alt="Helix-Pharm" class="logo-img"
+             style="height:54px;width:54px;border-radius:50%;object-fit:cover;display:block;">
+      </div>
+    </a>
+    <button class="cart-btn" id="cartBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- MENU -->
+<div class="menu-overlay" id="menuOverlay"></div>
+<nav class="slide-menu" id="slideMenu">
+  <div class="slide-menu-header">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" stroke="#888" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      <input type="text" placeholder="Search for...">
+    </div>
+    <button class="menu-close" id="menuClose">✕</button>
+  </div>
+  <div class="slide-menu-links">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop All</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="pd-hero">
+  <div class="pd-hero-inner">
+    <div class="pd-vial-wrap">
+      <svg width="200" height="320" viewBox="0 0 110 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="tb5g" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#1a4a7a;stop-opacity:1"/>
+            <stop offset="50%" style="stop-color:#0b2e4a;stop-opacity:1"/>
+            <stop offset="100%" style="stop-color:#061828;stop-opacity:1"/>
+          </linearGradient>
+          <linearGradient id="tb5c" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#2d6aad"/>
+            <stop offset="100%" style="stop-color:#1a4a7a"/>
+          </linearGradient>
+          <linearGradient id="tb5sh" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgba(255,255,255,0.15)"/>
+            <stop offset="100%" style="stop-color:rgba(255,255,255,0)"/>
+          </linearGradient>
+        </defs>
+        <!-- vial body -->
+        <rect x="22" y="28" width="66" height="142" rx="6" fill="url(#tb5g)" stroke="#1a4a7a" stroke-width="1.5"/>
+        <!-- label area -->
+        <rect x="22" y="48" width="66" height="100" rx="3" fill="#0d3558"/>
+        <!-- shine -->
+        <rect x="24" y="28" width="12" height="142" rx="4" fill="url(#tb5sh)"/>
+        <!-- brand line -->
+        <text x="55" y="65" text-anchor="middle" fill="white" font-size="5.5" font-weight="700" letter-spacing="1" font-family="Arial,sans-serif">HELIX-PHARM</text>
+        <line x1="28" y1="69" x2="82" y2="69" stroke="rgba(255,255,255,0.25)" stroke-width="0.6"/>
+        <!-- product name -->
+        <text x="55" y="95" text-anchor="middle" fill="white" font-size="14" font-weight="900" font-family="Arial,sans-serif">TB-500</text>
+        <text x="55" y="111" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="8.5" font-family="Arial,sans-serif">THYMOSIN BETA-4</text>
+        <text x="55" y="124" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="7" font-family="Arial,sans-serif">10mg</text>
+        <text x="55" y="142" text-anchor="middle" fill="rgba(255,255,255,0.45)" font-size="5.5" letter-spacing="0.5" font-family="Arial,sans-serif">RESEARCH USE ONLY</text>
+        <!-- cap -->
+        <rect x="26" y="12" width="58" height="19" rx="4" fill="url(#tb5c)"/>
+        <rect x="22" y="25" width="66" height="8" rx="2" fill="url(#tb5c)"/>
+        <rect x="32" y="10" width="46" height="5" rx="2" fill="#3a7dc9"/>
+        <!-- molecule dots decoration -->
+        <circle cx="35" cy="133" r="2.5" fill="rgba(255,255,255,0.12)"/>
+        <circle cx="55" cy="129" r="2"   fill="rgba(255,255,255,0.10)"/>
+        <circle cx="75" cy="133" r="2.5" fill="rgba(255,255,255,0.12)"/>
+        <line x1="35" y1="133" x2="55" y2="129" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+        <line x1="55" y1="129" x2="75" y2="133" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      </svg>
+    </div>
+
+    <div class="pd-info">
+      <a href="shop.html" class="back-link">← Back to Shop</a>
+      <div class="pd-subtitle">Thymosin Beta-4 · 43 Amino Acid Peptide</div>
+      <h1>TB-500</h1>
+      <div class="pd-tagline-big">REPAIR. RECOVER. PERFORM.</div>
+      <p class="pd-desc">TB-500 is a synthetic version of a naturally occurring peptide (Thymosin Beta-4) found in human cells. It plays a critical role in cell migration, tissue repair, angiogenesis, and inflammation control.</p>
+      <div class="pd-price-row">
+        <span class="pd-price">$85.00</span>
+        <span class="pd-badge">Research Use Only</span>
+      </div>
+      <button class="pd-atc" id="pdAtc" data-name="TB-500" data-price="85">Add To Cart</button>
+      <div class="pd-fda-bar">⚠️ NOT APPROVED BY THE FDA — FOR RESEARCH USE ONLY. Not for human consumption.</div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY BENEFITS STRIP -->
+<section class="kb-strip">
+  <div class="kb-grid">
+    <div class="kb-item">
+      <div class="kb-icon" style="background:#2ecc71;">🏃</div>
+      <div>
+        <h4>Accelerates Tissue Repair</h4>
+        <p>Enhances cell migration to injury sites, promoting faster tissue regeneration.</p>
+      </div>
+    </div>
+    <div class="kb-item">
+      <div class="kb-icon" style="background:#e74c3c;">🔥</div>
+      <div>
+        <h4>Anti-Inflammatory</h4>
+        <p>Modulates inflammatory response and reduces swelling, pain, and irritation.</p>
+      </div>
+    </div>
+    <div class="kb-item">
+      <div class="kb-icon" style="background:#9b59b6;">🫀</div>
+      <div>
+        <h4>Angiogenesis Support</h4>
+        <p>Stimulates formation of new blood vessels to improve oxygenation and nutrient delivery.</p>
+      </div>
+    </div>
+    <div class="kb-item">
+      <div class="kb-icon" style="background:#3498db;">💪</div>
+      <div>
+        <h4>Muscle, Tendon &amp; Ligament Support</h4>
+        <p>Supports recovery from strains, sprains, tears, and overuse injuries.</p>
+      </div>
+    </div>
+    <div class="kb-item">
+      <div class="kb-icon" style="background:#1abc9c;">🛡️</div>
+      <div>
+        <h4>Protects &amp; Recovers Cells</h4>
+        <p>Reduces cell damage and apoptosis, aiding recovery and overall resilience.</p>
+      </div>
+    </div>
+    <div class="kb-item">
+      <div class="kb-icon" style="background:#e67e22;">🔄</div>
+      <div>
+        <h4>Reduces Scar Tissue</h4>
+        <p>Helps to remodel scar tissue for better range of motion and function.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IS TB-500 -->
+<section style="background:#fafafa; padding:1px 0;">
+  <div class="pd-section">
+    <h2>What Is TB-500?</h2>
+    <div class="what-grid">
+      <div>
+        <p style="font-size:.9rem;color:var(--text-mid);line-height:1.65;margin-bottom:1rem;">TB-500 is a <strong>43-amino acid peptide fragment</strong> derived from Thymosin Beta-4 — a protein naturally present in nearly every human and animal cell. It is one of the most studied peptides for tissue repair and recovery.</p>
+        <div class="check-list">
+          <div class="check-item">Promotes cell migration and tissue remodeling</div>
+          <div class="check-item">Supports angiogenesis (formation of new blood vessels)</div>
+          <div class="check-item">Modulates inflammation and reduces scar tissue</div>
+          <div class="check-item">Enhances recovery from injury and surgery</div>
+          <div class="check-item">Protects cells from damage and oxidative stress</div>
+        </div>
+      </div>
+      <div>
+        <div class="quote-box">
+          "TB-500 accelerates healing and reduces inflammation by regulating the actin cytoskeleton, a key mechanism in cell movement and tissue repair."
+          <cite>— Philpott, M. et al., Frontiers in Pharmacology, 2018</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT DOES RESEARCH SHOW -->
+<section>
+  <div class="pd-section">
+    <h2>What Does Research Show?</h2>
+    <div class="research-grid">
+      <div class="research-card">
+        <div class="rc-icon">🦴</div>
+        <h4>Faster Healing</h4>
+        <p>Animal studies show significantly improved healing of tendons, ligaments, muscle, and skin.</p>
+      </div>
+      <div class="research-card">
+        <div class="rc-icon">⏱️</div>
+        <h4>Reduced Recovery Time</h4>
+        <p>Improved recovery and functional outcomes in models of soft tissue injury.</p>
+      </div>
+      <div class="research-card">
+        <div class="rc-icon">🧠</div>
+        <h4>Neuroprotection</h4>
+        <p>May protect nerves and support regeneration after nerve injury.</p>
+      </div>
+      <div class="research-card">
+        <div class="rc-icon">🩸</div>
+        <h4>Improved Angiogenesis</h4>
+        <p>Increases new blood vessel formation in ischemic tissues.</p>
+      </div>
+      <div class="research-card">
+        <div class="rc-icon">🫁</div>
+        <h4>Organ Protection</h4>
+        <p>Shown protective effects in heart, liver, kidney, and eye injury models.</p>
+      </div>
+      <div class="research-card" style="background:#f8f0e3;border-color:#e0d5c8;">
+        <div class="rc-icon">⚠️</div>
+        <h4>Research Stage</h4>
+        <p>Most data comes from animal and preclinical studies. Human clinical data is limited.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section style="background:#fafafa; padding:1px 0;">
+  <div class="pd-section">
+    <h2>How It Works</h2>
+    <div class="hiw-list">
+      <div class="hiw-item">
+        <div class="hiw-num">1</div>
+        <p><strong>Binds to G-actin</strong> — a key structural protein in cells — and regulates the actin cytoskeleton, controlling cell movement and shape.</p>
+      </div>
+      <div class="hiw-item">
+        <div class="hiw-num">2</div>
+        <p><strong>Enhances cell migration, proliferation, and survival</strong> at the injury site, accelerating the body's natural healing response.</p>
+      </div>
+      <div class="hiw-item">
+        <div class="hiw-num">3</div>
+        <p><strong>Stimulates angiogenesis</strong> — formation of new blood vessels — for improved blood flow and nutrient delivery to damaged tissues.</p>
+      </div>
+      <div class="hiw-item">
+        <div class="hiw-num">4</div>
+        <p><strong>Modulates inflammation and reduces oxidative stress</strong>, creating an optimal healing environment and preventing further cellular damage.</p>
+      </div>
+      <div class="hiw-item">
+        <div class="hiw-num">5</div>
+        <p><strong>Results in faster tissue repair, reduced pain,</strong> and improved functional recovery across muscle, tendon, ligament, and nerve tissue.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOSAGE GUIDELINES -->
+<section>
+  <div class="pd-section">
+    <h2>Dosage Guidelines (Research Use)</h2>
+    <div class="dosage-cols">
+      <div class="dosage-card">
+        <h4>💉 Starter / Acute Injury</h4>
+        <div class="dosage-amount">2–5 mg</div>
+        <ul>
+          <li>2–3 times per week</li>
+          <li>Subcutaneous (preferred)</li>
+          <li>Or Intramuscular</li>
+        </ul>
+      </div>
+      <div class="dosage-card featured">
+        <h4>🔄 General Recovery</h4>
+        <div class="dosage-amount">2–5 mg</div>
+        <ul>
+          <li>1–2 times per week</li>
+          <li>Subcutaneous</li>
+          <li>Consistent schedule</li>
+        </ul>
+      </div>
+      <div class="dosage-card">
+        <h4>🛡️ Chronic / Maintenance</h4>
+        <div class="dosage-amount">1–2 mg</div>
+        <ul>
+          <li>1 time per week</li>
+          <li>Subcutaneous</li>
+          <li>Long-term protocol</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cycle-note">⚠️ <strong>Cycles:</strong> Commonly used for 4–8 weeks. Adjust based on individual response and research goals.</div>
+  </div>
+</section>
+
+<!-- ADMINISTRATION METHODS -->
+<section style="background:#fafafa; padding:1px 0;">
+  <div class="pd-section">
+    <h2>Administration Methods</h2>
+    <div class="admin-grid">
+      <div class="admin-card">
+        <div class="a-icon">💉</div>
+        <h4>Subcutaneous (SQ)</h4>
+        <p>Most common method. Injected under the skin near the injury site.</p>
+      </div>
+      <div class="admin-card">
+        <div class="a-icon">🩺</div>
+        <h4>Intramuscular (IM)</h4>
+        <p>Effective for deeper muscle injuries. Slightly faster absorption.</p>
+      </div>
+      <div class="admin-card">
+        <div class="a-icon">💧</div>
+        <h4>Dilution</h4>
+        <p>Reconstitute with bacteriostatic water. Store refrigerated (2–8°C / 36–46°F).</p>
+      </div>
+      <div class="admin-card">
+        <div class="a-icon">📅</div>
+        <h4>Frequency</h4>
+        <p>Based on protocol and injury severity. Consistency is key to optimal results.</p>
+      </div>
+    </div>
+    <div class="store-note">❄️ Store refrigerated (2–8°C / 36–46°F) after reconstitution. Do not freeze reconstituted solution.</div>
+  </div>
+</section>
+
+<!-- IDEAL FOR -->
+<section>
+  <div class="pd-section">
+    <h2>Ideal For</h2>
+    <div class="ideal-grid">
+      <div class="ideal-item">Athletes &amp; active individuals</div>
+      <div class="ideal-item">Tendon, ligament &amp; muscle injuries</div>
+      <div class="ideal-item">Post-surgery recovery</div>
+      <div class="ideal-item">Chronic pain &amp; inflammation</div>
+      <div class="ideal-item">Sprains, strains &amp; overuse injuries</div>
+      <div class="ideal-item">Nerve injuries</div>
+      <div class="ideal-item">General tissue damage &amp; recovery</div>
+    </div>
+  </div>
+</section>
+
+<!-- POTENTIAL SIDE EFFECTS -->
+<section style="background:#fafafa; padding:1px 0;">
+  <div class="pd-section">
+    <h2>Potential Side Effects</h2>
+    <div class="se-grid">
+      <div class="se-profile">
+        <h4>✅ Safety Profile</h4>
+        <p>TB-500 has a <strong>strong safety profile</strong> in animal studies. No significant adverse effects reported at research doses.</p>
+      </div>
+      <div class="se-mild-list">
+        <h4>Possible Mild Effects (Rare)</h4>
+        <ul>
+          <li>Temporary redness or irritation at injection site</li>
+          <li>Mild headache</li>
+          <li>Nausea</li>
+          <li>Fatigue</li>
+          <li>Dizziness</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TAGLINE BANNER -->
+<div class="tagline-banner">
+  <h3>HEAL STRONGER. RECOVER FASTER.</h3>
+  <p>TB-500 — Supporting Your Body's Natural Ability to Heal.</p>
+</div>
+
+<!-- IMPORTANT NOTES -->
+<section>
+  <div class="pd-section">
+    <h2>Important Notes</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
+      <div style="background:white;border:1px solid var(--border);border-radius:12px;padding:1.2rem;">
+        <h4 style="font-size:.85rem;font-weight:800;color:var(--black);margin-bottom:.6rem;text-transform:uppercase;">Research Use Only</h4>
+        <p style="font-size:.82rem;color:var(--text-mid);line-height:1.55;">TB-500 is sold strictly for laboratory and research purposes. It is not intended for human or veterinary use. All research must comply with applicable regulations.</p>
+      </div>
+      <div style="background:white;border:1px solid var(--border);border-radius:12px;padding:1.2rem;">
+        <h4 style="font-size:.85rem;font-weight:800;color:var(--black);margin-bottom:.6rem;text-transform:uppercase;">Storage &amp; Handling</h4>
+        <p style="font-size:.82rem;color:var(--text-mid);line-height:1.55;">Keep lyophilized powder at -20°C for long-term storage. After reconstitution with bacteriostatic water, refrigerate at 2–8°C and use within 30 days.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL DISCLAIMER -->
+<div class="final-disclaimer">
+  <strong>IMPORTANT DISCLAIMER:</strong> TB-500 is not approved by the FDA. For Research Use Only — Not for human consumption. All products on this site are for Research and Development use only. The statements made within this website have not been evaluated by the US Food and Drug Administration. Always consult a qualified healthcare professional.
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="61205B8A-CA41-4D01-BDCD-774BFB032CE1.png" alt="Helix-Pharm" class="footer-logo-img">
+  </div>
+  <p class="tagline">We take pride in treating every client,<br>large or small, with the utmost regard.</p>
+  <div class="footer-cols">
+    <div class="footer-col">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop All</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <div class="support-email">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" fill="none" stroke="#888" stroke-width="2"/></svg>
+        info@helix-pharm.com
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 helix-pharm.com. All Rights Reserved.</p>
+    <div class="footer-legal">
+      <p>All products on this site are for Research, Development use only. Products are Not for Human consumption of any kind.</p>
+      <p>Helix-Pharm is a chemical supplier. Not a compounding pharmacy or outsourcing facility as defined under 503A/503B of the Federal Food, Drug, and Cosmetic act.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <span>Your Cart</span>
+    <button class="cart-x" id="cartClose">✕</button>
+  </div>
+  <div class="cart-body" id="cartBody"><p class="cart-empty-msg">Your cart is empty.</p></div>
+  <div class="cart-foot">
+    <div class="cart-subtotal"><span>Subtotal</span><span id="cartTotal">$0.00</span></div>
+    <button class="checkout-btn">Checkout</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
+<script src="js/main.js"></script>
+<script>
+  document.getElementById('pdAtc').addEventListener('click', function() {
+    const name = this.dataset.name;
+    const price = parseFloat(this.dataset.price);
+    if (typeof addToCart === 'function') {
+      addToCart(name, price);
+      this.textContent = 'Added!';
+      this.classList.add('added');
+      setTimeout(() => { this.textContent = 'Add To Cart'; this.classList.remove('added'); }, 2000);
+    }
+  });
+</script>
+</body>
+</html>
