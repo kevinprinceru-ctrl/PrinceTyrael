@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAD+ — Cellular Fuel for Health & Longevity | Helix-Pharm</title>
+  <meta name="description" content="NAD+ (Nicotinamide Adenine Dinucleotide) — The Cellular Fuel. 1000mg Research Use Only. Energy production, DNA repair, healthy aging, brain function.">
+  <link rel="stylesheet" href="css/styles.css?v=3">
+  <style>
+    .pd-hero { background: #e8f0fc; padding: 2.5rem 1.5rem; }
+    .pd-hero-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    @media(max-width:640px){ .pd-hero-inner{ grid-template-columns:1fr; gap:1.5rem; } }
+    .pd-vial-wrap { display:flex; justify-content:center; align-items:center; padding:1rem; }
+    .pd-info h1 { font-size:clamp(1.8rem,3vw,2.6rem); font-weight:900; color:var(--black); margin-bottom:.3rem; }
+    .pd-info .pd-subtitle { font-size:.88rem; color:#1565c0; font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin-bottom:.35rem; }
+    .pd-info .pd-tagline-big { font-size:1.1rem; font-weight:800; color:#0a1f44; margin-bottom:.8rem; letter-spacing:.02em; }
+    .pd-info .pd-desc { font-size:.9rem; color:var(--text-mid); margin-bottom:1.4rem; line-height:1.65; }
+    .pd-price-row { display:flex; align-items:center; gap:1.2rem; margin-bottom:1.2rem; flex-wrap:wrap; }
+    .pd-price { font-size:2rem; font-weight:900; color:var(--black); }
+    .pd-badge { background:#0a1f44; color:white; font-size:.72rem; font-weight:700; padding:.3rem .8rem; border-radius:50px; letter-spacing:.07em; text-transform:uppercase; }
+    .pd-atc { display:block; width:100%; background:var(--black); color:white; text-align:center; padding:.9rem; border:none; border-radius:8px; font-size:1rem; font-weight:700; cursor:pointer; transition:opacity .2s; margin-bottom:.8rem; }
+    .pd-atc:hover { opacity:.82; }
+    .pd-atc.added { background:#1a6e3c; }
+    .pd-fda-bar { background:#fff3cd; border:1px solid #ffc107; border-radius:8px; padding:.75rem 1rem; font-size:.78rem; color:#856404; font-weight:600; }
+
+    /* KEY BENEFITS STRIP */
+    .kb-strip { background:#0a1f44; padding:2rem 1.5rem; }
+    .kb-grid { max-width:1000px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
+    @media(max-width:700px){ .kb-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:420px){ .kb-grid{ grid-template-columns:1fr; } }
+    .kb-item { display:flex; align-items:flex-start; gap:.8rem; }
+    .kb-icon { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
+    .kb-item h4 { color:white; font-size:.82rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; margin-bottom:.25rem; }
+    .kb-item p  { color:rgba(255,255,255,.6); font-size:.78rem; line-height:1.45; }
+
+    /* SECTIONS */
+    .pd-section { max-width:1000px; margin:0 auto; padding:2.8rem 1.5rem; }
+    .pd-section h2 { font-size:1.25rem; font-weight:900; color:var(--black); text-transform:uppercase; letter-spacing:.08em; margin-bottom:1.2rem; padding-bottom:.6rem; border-bottom:3px solid #1565c0; }
+
+    /* What is NAD+ */
+    .what-grid { display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:start; }
+    @media(max-width:640px){ .what-grid{ grid-template-columns:1fr; } }
+    .check-list { display:flex; flex-direction:column; gap:.6rem; margin:1rem 0; }
+    .check-item { display:flex; align-items:flex-start; gap:.6rem; font-size:.88rem; color:var(--text-mid); }
+    .check-item::before { content:'✅'; flex-shrink:0; }
+
+    /* Age decline chart */
+    .age-box { background:#0a1f44; border-radius:12px; padding:1.4rem; color:white; }
+    .age-box h4 { font-size:.88rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#64b5f6; margin-bottom:.5rem; }
+    .age-box p { font-size:.82rem; color:rgba(255,255,255,.7); margin-bottom:1rem; line-height:1.5; }
+    .age-chart { display:flex; align-items:flex-end; gap:.5rem; height:80px; margin-top:.5rem; }
+    .age-bar-wrap { display:flex; flex-direction:column; align-items:center; gap:.3rem; flex:1; }
+    .age-bar { width:100%; background:#1565c0; border-radius:3px 3px 0 0; transition:height .3s; }
+    .age-label { font-size:.65rem; color:rgba(255,255,255,.5); }
+    .age-note { font-size:.7rem; color:rgba(255,255,255,.45); margin-top:.7rem; font-style:italic; }
+
+    /* How it works */
+    .hiw-flow { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; }
+    @media(max-width:640px){ .hiw-flow{ grid-template-columns:repeat(2,1fr); } }
+    .hiw-step { background:white; border:1px solid var(--border); border-radius:12px; padding:1.1rem; text-align:center; }
+    .hiw-num { width:32px; height:32px; background:#0a1f44; color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.82rem; font-weight:800; margin:0 auto .7rem; }
+    .hiw-step h4 { font-size:.75rem; font-weight:800; color:#1565c0; text-transform:uppercase; letter-spacing:.04em; margin-bottom:.4rem; }
+    .hiw-step p { font-size:.78rem; color:var(--text-mid); line-height:1.45; }
+    .restore-note { background:#0a1f44; color:white; border-radius:10px; padding:1rem 1.4rem; font-size:.85rem; margin-top:1.2rem; text-align:center; font-weight:700; letter-spacing:.02em; }
+
+    /* Science grid */
+    .science-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; }
+    @media(max-width:700px){ .science-grid{ grid-template-columns:repeat(2,1fr); } }
+    .sci-card { background:white; border:1px solid var(--border); border-radius:12px; padding:1.1rem; text-align:center; }
+    .sci-card .sci-icon { font-size:1.5rem; margin-bottom:.5rem; }
+    .sci-card h4 { font-size:.75rem; font-weight:800; color:#0a1f44; text-transform:uppercase; letter-spacing:.04em; margin-bottom:.4rem; }
+    .sci-card p  { font-size:.76rem; color:var(--text-mid); line-height:1.45; }
+
+    /* Health outcomes table */
+    .outcomes-table { width:100%; border-collapse:collapse; }
+    .outcomes-table th { background:#0a1f44; color:white; padding:.7rem 1rem; font-size:.8rem; text-transform:uppercase; letter-spacing:.05em; text-align:left; }
+    .outcomes-table td { padding:.7rem 1rem; font-size:.84rem; border-bottom:1px solid var(--border); color:var(--text-mid); }
+    .outcomes-table tr:last-child td { border-bottom:none; }
+    .outcomes-table tr:nth-child(even) td { background:#f8f8f8; }
+    .outcome-icon { font-size:1.1rem; margin-right:.4rem; }
+
+    /* Dosage */
+    .dosage-cols { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
+    @media(max-width:680px){ .dosage-cols{ grid-template-columns:1fr; } }
+    .dosage-card { background:white; border:2px solid var(--border); border-radius:12px; padding:1.3rem; }
+    .dosage-card.featured { border-color:#0a1f44; }
+    .dosage-card h4 { font-size:.8rem; font-weight:800; text-transform:uppercase; letter-spacing:.07em; margin-bottom:.8rem; color:#0a1f44; }
+    .dosage-amount { font-size:1.4rem; font-weight:900; color:var(--black); margin-bottom:.3rem; }
+    .dosage-card ul { padding-left:0; display:flex; flex-direction:column; gap:.35rem; }
+    .dosage-card ul li { font-size:.82rem; color:var(--text-mid); display:flex; align-items:center; gap:.4rem; }
+    .dosage-card ul li::before { content:'•'; color:#1565c0; font-weight:900; }
+    .cycle-note { background:#e3f2fd; border:1px solid #90caf9; border-radius:8px; padding:.8rem 1rem; font-size:.82rem; color:#0d47a1; margin-top:1rem; }
+
+    /* Natural ways */
+    .natural-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; }
+    @media(max-width:580px){ .natural-grid{ grid-template-columns:1fr; } }
+    .nat-card { background:white; border:1px solid var(--border); border-radius:10px; padding:1rem; display:flex; align-items:flex-start; gap:.8rem; }
+    .nat-icon { font-size:1.4rem; flex-shrink:0; }
+    .nat-card h4 { font-size:.83rem; font-weight:800; color:#0a1f44; margin-bottom:.25rem; }
+    .nat-card p  { font-size:.78rem; color:var(--text-mid); line-height:1.45; }
+
+    /* Ideal for */
+    .ideal-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:.7rem; }
+    @media(max-width:480px){ .ideal-grid{ grid-template-columns:1fr; } }
+    .ideal-item { display:flex; align-items:center; gap:.6rem; background:white; border:1px solid var(--border); border-radius:8px; padding:.75rem 1rem; font-size:.87rem; font-weight:500; }
+    .ideal-item::before { content:'✓'; color:#1565c0; font-weight:900; font-size:1rem; }
+
+    /* Safety */
+    .safety-box { background:#d4edda; border:1px solid #c3e6cb; border-radius:12px; padding:1.3rem; }
+    .safety-box h4 { color:#155724; font-size:.85rem; font-weight:800; margin-bottom:.7rem; text-transform:uppercase; }
+    .safety-box ul { display:flex; flex-direction:column; gap:.5rem; }
+    .safety-box ul li { font-size:.85rem; color:#155724; display:flex; align-items:center; gap:.5rem; }
+    .safety-box ul li::before { content:'✅'; }
+
+    /* Tagline banner */
+    .tagline-banner { background:#0a1f44; padding:2.5rem 1.5rem; text-align:center; }
+    .tagline-banner h3 { color:white; font-size:clamp(1rem,2.5vw,1.4rem); font-weight:900; letter-spacing:.04em; margin-bottom:1rem; }
+    .tagline-pills { display:flex; justify-content:center; flex-wrap:wrap; gap:.8rem; }
+    .tagline-pill { background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); color:white; border-radius:50px; padding:.4rem 1rem; font-size:.8rem; font-weight:700; letter-spacing:.04em; }
+
+    /* Disclaimer */
+    .final-disclaimer { background:#1a1a1a; color:rgba(255,255,255,.75); padding:1.5rem; font-size:.78rem; line-height:1.7; text-align:center; }
+    .final-disclaimer strong { color:white; }
+
+    /* Back link */
+    .back-link { display:inline-flex; align-items:center; gap:.4rem; font-size:.88rem; font-weight:600; color:var(--text-mid); padding:.5rem 0; transition:color .2s; }
+    .back-link:hover { color:var(--black); }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="header-inner">
+    <button class="hamburger" id="menuBtn"><span></span><span></span><span></span></button>
+    <a href="index.html" class="logo">
+      <div class="logo-img-wrap" style="background:transparent;padding:0;border-radius:0;">
+        <img src="61205B8A-CA41-4D01-BDCD-774BFB032CE1.png" alt="Helix-Pharm" class="logo-img"
+             style="height:54px;width:54px;border-radius:50%;object-fit:cover;display:block;">
+      </div>
+    </a>
+    <button class="cart-btn" id="cartBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- MENU -->
+<div class="menu-overlay" id="menuOverlay"></div>
+<nav class="slide-menu" id="slideMenu">
+  <div class="slide-menu-header">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" stroke="#888" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      <input type="text" placeholder="Search for...">
+    </div>
+    <button class="menu-close" id="menuClose">✕</button>
+  </div>
+  <div class="slide-menu-links">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop All</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="pd-hero">
+  <div class="pd-hero-inner">
+    <div class="pd-vial-wrap">
+      <svg width="200" height="320" viewBox="0 0 110 190" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="nadg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#e8f0fc"/>
+            <stop offset="40%" style="stop-color:#f5f8ff"/>
+            <stop offset="100%" style="stop-color:#c8d8f0"/>
+          </linearGradient>
+          <linearGradient id="nadc" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#0a1f44"/>
+            <stop offset="50%" style="stop-color:#1565c0"/>
+            <stop offset="100%" style="stop-color:#0a1f44"/>
+          </linearGradient>
+          <linearGradient id="nadlb" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#1565c0"/>
+            <stop offset="100%" style="stop-color:#0a1f44"/>
+          </linearGradient>
+          <linearGradient id="nadsh" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgba(255,255,255,0.45)"/>
+            <stop offset="100%" style="stop-color:rgba(255,255,255,0)"/>
+          </linearGradient>
+        </defs>
+        <!-- vial body -->
+        <rect x="20" y="30" width="70" height="152" rx="7" fill="url(#nadg)" stroke="#b0c4e8" stroke-width="1.2"/>
+        <!-- glass shine -->
+        <rect x="22" y="31" width="11" height="150" rx="5" fill="url(#nadsh)"/>
+        <!-- label background -->
+        <rect x="23" y="55" width="64" height="105" rx="3" fill="white" stroke="#d0dff5" stroke-width="0.5"/>
+        <!-- blue top band -->
+        <rect x="23" y="55" width="64" height="18" rx="3" fill="url(#nadlb)"/>
+        <text x="55" y="67" text-anchor="middle" fill="white" font-size="5.5" font-weight="700" letter-spacing="0.7" font-family="Arial,sans-serif">HELIX-PHARM</text>
+        <!-- product name -->
+        <text x="55" y="93" text-anchor="middle" fill="#0a1f44" font-size="18" font-weight="900" font-family="Arial,sans-serif">NAD+</text>
+        <text x="55" y="105" text-anchor="middle" fill="#444" font-size="6" font-family="Arial,sans-serif">PEPTIDE</text>
+        <!-- blue info badge -->
+        <rect x="27" y="110" width="56" height="14" rx="3" fill="#1565c0"/>
+        <text x="55" y="118.5" text-anchor="middle" fill="white" font-size="4.5" font-weight="700" letter-spacing="0.3" font-family="Arial,sans-serif">CELLULAR RENEWAL &amp; ENERGY SUPPORT</text>
+        <!-- sub text -->
+        <text x="55" y="132" text-anchor="middle" fill="#666" font-size="5" letter-spacing="0.3" font-family="Arial,sans-serif">RESEARCH USE ONLY</text>
+        <text x="55" y="140" text-anchor="middle" fill="#666" font-size="5" letter-spacing="0.3" font-family="Arial,sans-serif">NOT FOR HUMAN USE</text>
+        <text x="55" y="152" text-anchor="middle" fill="#0a1f44" font-size="9" font-weight="700" font-family="Arial,sans-serif">1000 mg</text>
+        <!-- molecule decoration -->
+        <circle cx="38" cy="163" r="3" fill="#1565c0" opacity="0.25"/>
+        <circle cx="55" cy="159" r="2.5" fill="#e53935" opacity="0.25"/>
+        <circle cx="72" cy="163" r="3" fill="#1565c0" opacity="0.25"/>
+        <line x1="38" y1="163" x2="55" y2="159" stroke="#1565c0" stroke-width="1" opacity="0.2"/>
+        <line x1="55" y1="159" x2="72" y2="163" stroke="#1565c0" stroke-width="1" opacity="0.2"/>
+        <!-- cap -->
+        <rect x="24" y="14" width="62" height="20" rx="5" fill="url(#nadc)"/>
+        <rect x="20" y="28" width="70" height="8" rx="2" fill="url(#nadc)"/>
+        <rect x="30" y="12" width="50" height="5" rx="2.5" fill="#1976d2"/>
+      </svg>
+    </div>
+
+    <div class="pd-info">
+      <a href="shop.html" class="back-link">← Back to Shop</a>
+      <div class="pd-subtitle">Nicotinamide Adenine Dinucleotide · Cellular Coenzyme</div>
+      <h1>NAD+</h1>
+      <div class="pd-tagline-big">THE CELLULAR FUEL FOR HEALTH &amp; LONGEVITY</div>
+      <p class="pd-desc">NAD+ (Nicotinamide Adenine Dinucleotide) is an essential coenzyme found in every cell. It powers critical biological processes that drive energy production, DNA repair, healthy aging, and overall cellular function.</p>
+      <div class="pd-price-row">
+        <span class="pd-price">$80.00</span>
+        <span class="pd-badge">1000mg · Research Use Only</span>
+      </div>
+      <button class="pd-atc" id="pdAtc" data-name="NAD+" data-price="80">Add To Cart</button>
+      <div class="pd-fda-bar">⚠️ NOT APPROVED BY THE FDA — FOR RESEARCH USE ONLY. Not for human consumption.</div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY BENEFITS STRIP -->
+<section class="kb-strip">
+  <div class="kb-grid">
+    <div class="kb-item">
+      <div class="kb-icon" style="background:#f59e0b;">⚡</div>
+      <div>
+        <h4>Boosts Energy Production</h4>
+        <p>Essential for mitochondrial function and ATP production, your body's primary fuel.</p>
+      </div>
+    </div>
+    <div class="kb-item">
+      <div class="kb-icon" style="background:#10b981;">🧬</div>
+      <div>
+        <h4>Supports DNA Repair</h4>
+        <p>Activates sirtuins and PARPs that help repair DNA damage and maintain genomic stability.</p>
+      </div>
+    </div>
+    <div class="kb-item">
+      <div class="kb-icon" style="background:#8b5cf6;">🕰️</div>
+      <div>
+        <h4>Promotes Healthy Aging</h4>
+        <p>Supports cellular longevity, reduces age-related decline, and enhances resilience.</p>
+      </div>
+    </div>
+    <div class="kb-item">
+      <div class="kb-icon" style="background:#3b82f6;">🧠</div>
+      <div>
+        <h4>Enhances Brain Function</h4>
+        <p>Supports neuroprotection, cognitive performance and mental clarity.</p>
+      </div>
+    </div>
+    <div class="kb-item">
+      <div class="kb-icon" style="background:#f97316;">🔥</div>
+      <div>
+        <h4>Improves Metabolic Health</h4>
+        <p>Supports insulin sensitivity, healthy glucose metabolism, and fat oxidation.</p>
+      </div>
+    </div>
+    <div class="kb-item">
+      <div class="kb-icon" style="background:#ef4444;">❤️</div>
+      <div>
+        <h4>Supports Heart Health</h4>
+        <p>Promotes healthy blood flow, vascular function, and cardiovascular resilience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IS NAD+ -->
+<section style="background:#fafafa;padding:1px 0;">
+  <div class="pd-section">
+    <h2>What Is NAD+?</h2>
+    <div class="what-grid">
+      <div>
+        <p style="font-size:.9rem;color:var(--text-mid);line-height:1.65;margin-bottom:1rem;">NAD+ is a <strong>vital coenzyme involved in more than 500 enzymatic reactions</strong>. It is present in every living cell and plays a central role in converting nutrients into cellular energy and regulating biological processes.</p>
+        <div class="check-list">
+          <div class="check-item">Found in all living cells</div>
+          <div class="check-item">Declines naturally with age</div>
+          <div class="check-item">Critical for energy, repair, and regulation</div>
+          <div class="check-item">Levels can be supported through lifestyle, precursors, and advanced therapies</div>
+        </div>
+      </div>
+      <div>
+        <div class="age-box">
+          <h4>NAD+ Declines with Age</h4>
+          <p>NAD+ levels can drop up to 50% or more from early adulthood — contributing to fatigue, cognitive decline, and reduced cellular repair.</p>
+          <div class="age-chart">
+            <div class="age-bar-wrap">
+              <div class="age-bar" style="height:72px;"></div>
+              <span class="age-label">20s</span>
+            </div>
+            <div class="age-bar-wrap">
+              <div class="age-bar" style="height:60px;background:#1976d2;"></div>
+              <span class="age-label">30s</span>
+            </div>
+            <div class="age-bar-wrap">
+              <div class="age-bar" style="height:48px;background:#1e88e5;"></div>
+              <span class="age-label">40s</span>
+            </div>
+            <div class="age-bar-wrap">
+              <div class="age-bar" style="height:36px;background:#42a5f5;"></div>
+              <span class="age-label">50s</span>
+            </div>
+            <div class="age-bar-wrap">
+              <div class="age-bar" style="height:26px;background:#64b5f6;"></div>
+              <span class="age-label">60s</span>
+            </div>
+            <div class="age-bar-wrap">
+              <div class="age-bar" style="height:18px;background:#90caf9;"></div>
+              <span class="age-label">70s+</span>
+            </div>
+          </div>
+          <p class="age-note">Relative NAD+ levels shown by decade. Decline accelerates after age 40.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW NAD+ WORKS -->
+<section>
+  <div class="pd-section">
+    <h2>How NAD+ Works in Your Body</h2>
+    <div class="hiw-flow">
+      <div class="hiw-step">
+        <div class="hiw-num">1</div>
+        <h4>Fuels Mitochondria</h4>
+        <p>Drives ATP production for cellular energy via the electron transport chain.</p>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">2</div>
+        <h4>Activates Sirtuins &amp; PARPs</h4>
+        <p>Regulates genes and repairs DNA damage, supporting cellular integrity.</p>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">3</div>
+        <h4>Improves Cellular Function</h4>
+        <p>Enhances resilience, metabolism &amp; overall health at the cellular level.</p>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">4</div>
+        <h4>Long-Term Vitality</h4>
+        <p>Promotes healthy aging, peak performance and sustained biological function.</p>
+      </div>
+    </div>
+    <div class="restore-note">RESTORE. REPAIR. RECHARGE. — NAD+ is at the center of cellular health and performance.</div>
+  </div>
+</section>
+
+<!-- THE SCIENCE BEHIND NAD+ -->
+<section style="background:#fafafa;padding:1px 0;">
+  <div class="pd-section">
+    <h2>The Science Behind NAD+</h2>
+    <div class="science-grid">
+      <div class="sci-card">
+        <div class="sci-icon">⚡</div>
+        <h4>Mitochondrial Energy</h4>
+        <p>NAD+ is essential for the electron transport chain, generating ATP for energy throughout the body.</p>
+      </div>
+      <div class="sci-card">
+        <div class="sci-icon">🧬</div>
+        <h4>DNA Repair</h4>
+        <p>Activates PARP enzymes to detect and repair DNA damage, supporting cellular integrity over time.</p>
+      </div>
+      <div class="sci-card">
+        <div class="sci-icon">🔬</div>
+        <h4>Gene Regulation</h4>
+        <p>Activates sirtuins (such as SIRT1) that regulate genes linked to longevity and stress resistance.</p>
+      </div>
+      <div class="sci-card">
+        <div class="sci-icon">🛡️</div>
+        <h4>Cellular Protection</h4>
+        <p>Reduces oxidative stress and inflammation, promoting healthy cell function and resilience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NAD+ LEVELS & HEALTH OUTCOMES -->
+<section>
+  <div class="pd-section">
+    <h2>NAD+ Levels &amp; Health Outcomes</h2>
+    <table class="outcomes-table">
+      <thead>
+        <tr>
+          <th>Supports</th>
+          <th>Potential Outcomes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="outcome-icon">⚡</span> Energy Production</td>
+          <td>More energy, less fatigue, better endurance</td>
+        </tr>
+        <tr>
+          <td><span class="outcome-icon">🧠</span> Brain &amp; Nerve Health</td>
+          <td>Improved focus, memory, and mental clarity</td>
+        </tr>
+        <tr>
+          <td><span class="outcome-icon">🧬</span> DNA &amp; Cell Repair</td>
+          <td>Healthier cells, slower aging, greater resilience</td>
+        </tr>
+        <tr>
+          <td><span class="outcome-icon">🔥</span> Metabolism</td>
+          <td>Better insulin sensitivity, fat metabolism, weight management</td>
+        </tr>
+        <tr>
+          <td><span class="outcome-icon">❤️</span> Cardiovascular Health</td>
+          <td>Healthy blood flow, vascular function, heart protection</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- DOSAGE GUIDELINES -->
+<section style="background:#fafafa;padding:1px 0;">
+  <div class="pd-section">
+    <h2>Dosage Guidelines (Research Use)</h2>
+    <div class="dosage-cols">
+      <div class="dosage-card featured">
+        <h4>💉 Injection (Subcutaneous)</h4>
+        <div class="dosage-amount">250–500 mg</div>
+        <ul>
+          <li>1–3 times per week</li>
+          <li>Subcutaneous preferred</li>
+          <li>Most common research protocol</li>
+        </ul>
+      </div>
+      <div class="dosage-card">
+        <h4>💊 IV Infusion</h4>
+        <div class="dosage-amount">250–1,000 mg</div>
+        <ul>
+          <li>1–2 times per week</li>
+          <li>Administered intravenously</li>
+          <li>Highest bioavailability</li>
+        </ul>
+      </div>
+      <div class="dosage-card">
+        <h4>🌿 Oral Precursors (Alt.)</h4>
+        <div class="dosage-amount">250–1,000 mg</div>
+        <ul>
+          <li>Daily oral dosing</li>
+          <li>NR, NMN, or NAD+ loaders</li>
+          <li>Non-injection alternative</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cycle-note">⏱️ <strong>Cycles:</strong> Commonly used for 4–12 weeks, then reassessed based on individual goals.</div>
+  </div>
+</section>
+
+<!-- NATURAL WAYS TO SUPPORT NAD+ -->
+<section>
+  <div class="pd-section">
+    <h2>Natural Ways to Support NAD+</h2>
+    <div class="natural-grid">
+      <div class="nat-card">
+        <div class="nat-icon">🏃</div>
+        <div>
+          <h4>Regular Exercise</h4>
+          <p>Improves mitochondrial function and NAD+ production throughout the body.</p>
+        </div>
+      </div>
+      <div class="nat-card">
+        <div class="nat-icon">⏰</div>
+        <div>
+          <h4>Intermittent Fasting</h4>
+          <p>Activates autophagy and boosts NAD+ levels by reducing cellular stress.</p>
+        </div>
+      </div>
+      <div class="nat-card">
+        <div class="nat-icon">🥗</div>
+        <div>
+          <h4>Healthy Diet</h4>
+          <p>Foods rich in tryptophan, B3 (niacin), and antioxidants help maintain NAD+ levels.</p>
+        </div>
+      </div>
+      <div class="nat-card">
+        <div class="nat-icon">🚫</div>
+        <div>
+          <h4>Limit Alcohol &amp; Sugar</h4>
+          <p>Excess intake can deplete NAD+ levels, accelerating cellular aging.</p>
+        </div>
+      </div>
+      <div class="nat-card">
+        <div class="nat-icon">💊</div>
+        <div>
+          <h4>Consider Precursors</h4>
+          <p>NR, NMN, or NAD+ peptides can help raise and maintain levels in research settings.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IDEAL FOR -->
+<section style="background:#fafafa;padding:1px 0;">
+  <div class="pd-section">
+    <h2>Ideal For</h2>
+    <div class="ideal-grid">
+      <div class="ideal-item">Athletes &amp; active individuals</div>
+      <div class="ideal-item">Those seeking healthy aging</div>
+      <div class="ideal-item">Cognitive &amp; metabolic support</div>
+      <div class="ideal-item">Recovery &amp; DNA repair support</div>
+      <div class="ideal-item">High performers &amp; biohackers</div>
+    </div>
+  </div>
+</section>
+
+<!-- SAFETY & TOLERABILITY -->
+<section>
+  <div class="pd-section">
+    <h2>Safety &amp; Tolerability (Research Use)</h2>
+    <div class="safety-box">
+      <h4>Established Safety Profile</h4>
+      <ul>
+        <li>Generally well tolerated in research settings</li>
+        <li>Minimal side effects reported</li>
+        <li>Always consult a qualified healthcare professional before use</li>
+        <li>Always source from reputable suppliers</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TAGLINE BANNER -->
+<div class="tagline-banner">
+  <h3>RESTORE. REPAIR. RECHARGE.</h3>
+  <div class="tagline-pills">
+    <span class="tagline-pill">⚡ POWER YOUR CELLS</span>
+    <span class="tagline-pill">🧬 PROTECT YOUR DNA</span>
+    <span class="tagline-pill">🧠 OPTIMIZE YOUR HEALTH</span>
+    <span class="tagline-pill">♾️ LIVE BETTER. LONGER.</span>
+  </div>
+</div>
+
+<!-- FINAL DISCLAIMER -->
+<div class="final-disclaimer">
+  <strong>IMPORTANT DISCLAIMER:</strong> NAD+ is not approved by the FDA. For Research Use Only — Not for human consumption. Always source from reputable suppliers. Consult a healthcare professional before use. All products on this site are for Research and Development use only.
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="61205B8A-CA41-4D01-BDCD-774BFB032CE1.png" alt="Helix-Pharm" class="footer-logo-img">
+  </div>
+  <p class="tagline">We take pride in treating every client,<br>large or small, with the utmost regard.</p>
+  <div class="footer-cols">
+    <div class="footer-col">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop All</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <div class="support-email">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" fill="none" stroke="#888" stroke-width="2"/></svg>
+        info@helix-pharm.com
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 helix-pharm.com. All Rights Reserved.</p>
+    <div class="footer-legal">
+      <p>All products on this site are for Research, Development use only. Products are Not for Human consumption of any kind.</p>
+      <p>Helix-Pharm is a chemical supplier. Not a compounding pharmacy or outsourcing facility as defined under 503A/503B of the Federal Food, Drug, and Cosmetic act.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <span>Your Cart</span>
+    <button class="cart-x" id="cartClose">✕</button>
+  </div>
+  <div class="cart-body" id="cartBody"><p class="cart-empty-msg">Your cart is empty.</p></div>
+  <div class="cart-foot">
+    <div class="cart-subtotal"><span>Subtotal</span><span id="cartTotal">$0.00</span></div>
+    <button class="checkout-btn">Checkout</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
+<script src="js/main.js"></script>
+<script>
+  document.getElementById('pdAtc').addEventListener('click', function() {
+    const name = this.dataset.name;
+    const price = parseFloat(this.dataset.price);
+    if (typeof addToCart === 'function') {
+      addToCart(name, price);
+      this.textContent = 'Added!';
+      this.classList.add('added');
+      setTimeout(() => { this.textContent = 'Add To Cart'; this.classList.remove('added'); }, 2000);
+    }
+  });
+</script>
+</body>
+</html>
