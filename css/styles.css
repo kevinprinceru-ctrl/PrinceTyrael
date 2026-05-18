@@ -70,35 +70,22 @@ ul  { list-style: none; }
 /* Logo */
 .logo {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 1px;
   cursor: pointer;
 }
-.logo-hex {
-  width: 40px;
-  height: 30px;
-}
-.logo-wordmark {
+.logo-img-wrap {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 4px 12px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  line-height: 1;
+  justify-content: center;
 }
-.logo-name {
-  color: var(--white);
-  font-size: 1rem;
-  font-weight: 800;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-}
-.logo-sub {
-  color: var(--white);
-  font-size: .5rem;
-  font-weight: 500;
-  letter-spacing: .35em;
-  text-transform: uppercase;
-  opacity: .75;
+.logo-img {
+  height: 46px;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 /* Cart */
@@ -480,6 +467,15 @@ main { padding-top: 64px; }
   transition: all .28s ease;
 }
 .toast.show { transform: translateY(0); opacity: 1; }
+
+/* Footer logo image */
+.footer-logo-img {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 1rem;
+}
 
 /* ── FOOTER ── */
 footer {
