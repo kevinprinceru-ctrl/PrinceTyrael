@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GLOW Stack — The Ultimate Healing Peptide Stack | Helix-Pharm</title>
+  <meta name="description" content="GLOW Stack — GHK-Cu + BPC-157 + TB-500. The Ultimate Healing Peptide Stack. Repair. Recover. Regenerate. Research Use Only.">
+  <link rel="stylesheet" href="css/styles.css?v=3">
+  <style>
+    .pd-hero { background: #eef4f0; padding: 2.5rem 1.5rem; }
+    .pd-hero-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    @media(max-width:640px){ .pd-hero-inner{ grid-template-columns:1fr; gap:1.5rem; } }
+    .pd-vial-wrap { display:flex; justify-content:center; align-items:center; padding:1rem; }
+    .pd-info h1 { font-size:clamp(1.8rem,3vw,2.6rem); font-weight:900; color:var(--black); margin-bottom:.3rem; }
+    .pd-info .pd-subtitle { font-size:.88rem; color:#1a7a4a; font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin-bottom:.35rem; }
+    .pd-info .pd-tagline-big { font-size:1.1rem; font-weight:800; color:#1a2a5e; margin-bottom:.8rem; letter-spacing:.02em; }
+    .pd-info .pd-desc { font-size:.9rem; color:var(--text-mid); margin-bottom:1.4rem; line-height:1.65; }
+    .pd-price-row { display:flex; align-items:center; gap:1.2rem; margin-bottom:1.2rem; flex-wrap:wrap; }
+    .pd-price { font-size:2rem; font-weight:900; color:var(--black); }
+    .pd-badge { background:#1a2a5e; color:white; font-size:.72rem; font-weight:700; padding:.3rem .8rem; border-radius:50px; letter-spacing:.07em; text-transform:uppercase; }
+    .pd-badge-g { background:#1a7a4a; color:white; font-size:.72rem; font-weight:700; padding:.3rem .8rem; border-radius:50px; letter-spacing:.07em; text-transform:uppercase; }
+    .pd-atc { display:block; width:100%; background:var(--black); color:white; text-align:center; padding:.9rem; border:none; border-radius:8px; font-size:1rem; font-weight:700; cursor:pointer; transition:opacity .2s; margin-bottom:.8rem; }
+    .pd-atc:hover { opacity:.82; }
+    .pd-atc.added { background:#1a6e3c; }
+    .pd-fda-bar { background:#fff3cd; border:1px solid #ffc107; border-radius:8px; padding:.75rem 1rem; font-size:.78rem; color:#856404; font-weight:600; }
+
+    /* PEPTIDE BADGES */
+    .peptide-badges { display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:1rem; }
+    .pep-badge { border-radius:6px; padding:.3rem .75rem; font-size:.75rem; font-weight:700; letter-spacing:.04em; }
+    .pep-badge.ghk { background:#e3f0ff; color:#1a3566; border:1px solid #b3c6f7; }
+    .pep-badge.bpc { background:#e6f7ee; color:#155724; border:1px solid #b2dfca; }
+    .pep-badge.tb  { background:#e8f0fc; color:#0b2e4a; border:1px solid #90b4d8; }
+
+    /* KEY BENEFITS STRIP */
+    .kb-strip { background:#1a2a5e; padding:2rem 1.5rem; }
+    .kb-grid { max-width:1000px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
+    @media(max-width:700px){ .kb-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:420px){ .kb-grid{ grid-template-columns:1fr; } }
+    .kb-item { display:flex; align-items:flex-start; gap:.8rem; }
+    .kb-icon { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
+    .kb-item h4 { color:white; font-size:.82rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; margin-bottom:.25rem; }
+    .kb-item p  { color:rgba(255,255,255,.6); font-size:.78rem; line-height:1.45; }
+
+    /* SECTIONS */
+    .pd-section { max-width:1000px; margin:0 auto; padding:2.8rem 1.5rem; }
+    .pd-section h2 { font-size:1.25rem; font-weight:900; color:var(--black); text-transform:uppercase; letter-spacing:.08em; margin-bottom:1.2rem; padding-bottom:.6rem; border-bottom:3px solid #1a7a4a; }
+
+    /* THE STACK */
+    .stack-grid { display:flex; flex-direction:column; gap:1rem; }
+    .stack-card { display:grid; grid-template-columns:56px 1fr; gap:1rem; align-items:center; background:white; border:1px solid var(--border); border-radius:12px; padding:1.2rem; }
+    .stack-icon { width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0; }
+    .stack-card h4 { font-size:.92rem; font-weight:800; margin-bottom:.1rem; }
+    .stack-card .sc-sub { font-size:.75rem; font-weight:600; color:var(--text-light); text-transform:uppercase; letter-spacing:.05em; margin-bottom:.3rem; }
+    .stack-card p { font-size:.82rem; color:var(--text-mid); line-height:1.5; }
+
+    /* HOW IT WORKS */
+    .hiw-3col { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; align-items:start; }
+    @media(max-width:640px){ .hiw-3col{ grid-template-columns:1fr; } }
+    .hiw-card { background:white; border:1px solid var(--border); border-radius:12px; padding:1.2rem; text-align:center; }
+    .hiw-num { width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.85rem; font-weight:800; color:white; margin:0 auto .7rem; }
+    .hiw-card h4 { font-size:.82rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; margin-bottom:.5rem; }
+    .hiw-card p  { font-size:.8rem; color:var(--text-mid); line-height:1.5; }
+    .synergy-banner { background:#1a2a5e; color:white; border-radius:10px; padding:1.1rem 1.4rem; font-size:.88rem; margin-top:1.2rem; text-align:center; font-weight:700; line-height:1.5; letter-spacing:.02em; }
+
+    /* PEPTIDE OVERVIEW TABLE */
+    .peptide-table { width:100%; border-collapse:collapse; font-size:.82rem; }
+    .peptide-table th { background:#1a2a5e; color:white; padding:.7rem .9rem; text-align:left; font-size:.75rem; text-transform:uppercase; letter-spacing:.05em; }
+    .peptide-table td { padding:.75rem .9rem; border-bottom:1px solid var(--border); vertical-align:top; color:var(--text-mid); line-height:1.5; }
+    .peptide-table tr:last-child td { border-bottom:none; }
+    .peptide-table .pep-name { font-weight:800; color:var(--black); }
+    .peptide-table .pep-type { font-size:.72rem; color:var(--text-light); font-weight:600; text-transform:uppercase; }
+    .peptide-table td ul { padding-left:0; display:flex; flex-direction:column; gap:.25rem; }
+    .peptide-table td ul li { display:flex; align-items:flex-start; gap:.4rem; }
+    .peptide-table td ul li::before { content:'•'; color:#1a7a4a; font-weight:900; flex-shrink:0; }
+    .ghk-row { background:#f0f7ff; }
+    .bpc-row { background:#f0fff4; }
+    .tb-row  { background:#f0f4fc; }
+
+    /* DOSAGE */
+    .dosage-cols { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
+    @media(max-width:680px){ .dosage-cols{ grid-template-columns:1fr; } }
+    .dosage-card { background:white; border:2px solid var(--border); border-radius:12px; padding:1.3rem; }
+    .dosage-card.featured { border-color:#1a2a5e; }
+    .dosage-card h4 { font-size:.8rem; font-weight:800; text-transform:uppercase; letter-spacing:.07em; margin-bottom:.8rem; color:#1a2a5e; }
+    .dosage-amount { font-size:1.4rem; font-weight:900; color:var(--black); margin-bottom:.3rem; }
+    .dosage-card ul { padding-left:0; display:flex; flex-direction:column; gap:.35rem; }
+    .dosage-card ul li { font-size:.82rem; color:var(--text-mid); display:flex; align-items:center; gap:.4rem; }
+    .dosage-card ul li::before { content:'•'; color:#1a7a4a; font-weight:900; }
+    .cycle-note { background:#e8f5e9; border:1px solid #a5d6a7; border-radius:8px; padding:.8rem 1rem; font-size:.82rem; color:#1b5e20; margin-top:1rem; }
+    .dosage-note { background:#fff3e0; border:1px solid #ffcc80; border-radius:8px; padding:.7rem 1rem; font-size:.78rem; color:#e65100; margin-top:.8rem; }
+
+    /* RESULTS */
+    .results-list { display:flex; flex-direction:column; gap:.6rem; }
+    .result-item { display:flex; align-items:center; gap:.7rem; background:white; border:1px solid var(--border); border-radius:8px; padding:.8rem 1rem; font-size:.88rem; font-weight:500; }
+    .result-item::before { content:'✓'; color:#1a7a4a; font-weight:900; font-size:1rem; flex-shrink:0; }
+
+    /* APPLICATION METHODS */
+    .admin-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+    @media(max-width:580px){ .admin-grid{ grid-template-columns:1fr; } }
+    .admin-card { background:white; border:1px solid var(--border); border-radius:10px; padding:1rem; text-align:center; }
+    .admin-card .a-icon { font-size:1.6rem; margin-bottom:.5rem; }
+    .admin-card h4 { font-size:.78rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:#1a2a5e; margin-bottom:.3rem; }
+    .admin-card p  { font-size:.76rem; color:var(--text-mid); line-height:1.4; }
+
+    /* IDEAL FOR */
+    .ideal-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:.8rem; }
+    @media(max-width:480px){ .ideal-grid{ grid-template-columns:1fr; } }
+    .ideal-card { background:white; border:1px solid var(--border); border-radius:10px; padding:1rem; text-align:center; }
+    .ideal-card .ic-icon { font-size:1.6rem; margin-bottom:.4rem; }
+    .ideal-card p { font-size:.82rem; font-weight:600; color:var(--black); }
+
+    /* AT A GLANCE */
+    .glance-list { display:flex; flex-direction:column; gap:.6rem; }
+    .glance-item { display:flex; align-items:center; gap:.7rem; font-size:.88rem; color:var(--text-mid); }
+    .glance-item::before { content:'✓'; color:#1a2a5e; font-weight:900; font-size:1rem; flex-shrink:0; }
+
+    /* SAFETY */
+    .safety-cols { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
+    @media(max-width:580px){ .safety-cols{ grid-template-columns:1fr; } }
+    .safety-good { background:#d4edda; border:1px solid #c3e6cb; border-radius:12px; padding:1.2rem; }
+    .safety-good h4 { color:#155724; font-size:.85rem; font-weight:800; margin-bottom:.7rem; text-transform:uppercase; }
+    .safety-good ul { display:flex; flex-direction:column; gap:.4rem; }
+    .safety-good ul li { font-size:.83rem; color:#155724; display:flex; align-items:center; gap:.5rem; }
+    .safety-good ul li::before { content:'✅'; }
+    .notes-card { background:white; border:1px solid var(--border); border-radius:12px; padding:1.2rem; }
+    .notes-card h4 { font-size:.85rem; font-weight:800; margin-bottom:.7rem; color:var(--black); text-transform:uppercase; }
+    .notes-card ul { display:flex; flex-direction:column; gap:.4rem; }
+    .notes-card ul li { font-size:.82rem; color:var(--text-mid); display:flex; align-items:flex-start; gap:.5rem; }
+    .notes-card ul li::before { content:'⚠️'; flex-shrink:0; }
+
+    /* TAGLINE BANNER */
+    .tagline-banner { background:#1a2a5e; padding:2.5rem 1.5rem; text-align:center; }
+    .tagline-banner h3 { color:white; font-size:clamp(1rem,2.5vw,1.5rem); font-weight:900; letter-spacing:.04em; margin-bottom:.4rem; }
+    .tagline-banner .sub-tag { color:#7ee8a2; font-size:1rem; font-weight:700; margin-top:.4rem; }
+    .tagline-banner p { color:rgba(255,255,255,.7); font-size:.9rem; margin-top:.5rem; }
+
+    /* DISCLAIMER */
+    .final-disclaimer { background:#1a1a1a; color:rgba(255,255,255,.75); padding:1.5rem; font-size:.78rem; line-height:1.7; text-align:center; }
+    .final-disclaimer strong { color:white; }
+
+    /* BACK LINK */
+    .back-link { display:inline-flex; align-items:center; gap:.4rem; font-size:.88rem; font-weight:600; color:var(--text-mid); padding:.5rem 0; transition:color .2s; }
+    .back-link:hover { color:var(--black); }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="header-inner">
+    <button class="hamburger" id="menuBtn"><span></span><span></span><span></span></button>
+    <a href="index.html" class="logo">
+      <div class="logo-img-wrap" style="background:transparent;padding:0;border-radius:0;">
+        <img src="61205B8A-CA41-4D01-BDCD-774BFB032CE1.png" alt="Helix-Pharm" class="logo-img"
+             style="height:54px;width:54px;border-radius:50%;object-fit:cover;display:block;">
+      </div>
+    </a>
+    <button class="cart-btn" id="cartBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- MENU -->
+<div class="menu-overlay" id="menuOverlay"></div>
+<nav class="slide-menu" id="slideMenu">
+  <div class="slide-menu-header">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" stroke="#888" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      <input type="text" placeholder="Search for...">
+    </div>
+    <button class="menu-close" id="menuClose">✕</button>
+  </div>
+  <div class="slide-menu-links">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop All</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="pd-hero">
+  <div class="pd-hero-inner">
+    <div class="pd-vial-wrap">
+      <svg width="210" height="330" viewBox="0 0 115 195" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gsg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#e8f0fc"/>
+            <stop offset="40%" style="stop-color:#f5f9ff"/>
+            <stop offset="100%" style="stop-color:#ccdcf0"/>
+          </linearGradient>
+          <linearGradient id="gsc" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#9a9a9a"/><stop offset="45%" style="stop-color:#d5d5d5"/><stop offset="100%" style="stop-color:#9a9a9a"/>
+          </linearGradient>
+          <linearGradient id="gslb" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#1a2a5e"/><stop offset="100%" style="stop-color:#0d1b44"/>
+          </linearGradient>
+          <linearGradient id="gssh" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgba(255,255,255,0.45)"/><stop offset="100%" style="stop-color:rgba(255,255,255,0)"/>
+          </linearGradient>
+        </defs>
+        <!-- body -->
+        <rect x="20" y="30" width="75" height="157" rx="8" fill="url(#gsg)" stroke="#b0c4e8" stroke-width="1.2"/>
+        <rect x="22" y="31" width="12" height="155" rx="5" fill="url(#gssh)"/>
+        <!-- label -->
+        <rect x="24" y="56" width="67" height="112" rx="3" fill="white" stroke="#d0dff5" stroke-width="0.5"/>
+        <rect x="24" y="56" width="67" height="20" rx="3" fill="url(#gslb)"/>
+        <text x="57.5" y="66" text-anchor="middle" fill="white" font-size="5" font-weight="700" letter-spacing="0.7" font-family="Arial,sans-serif">HELIX-PHARM</text>
+        <text x="57.5" y="74" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="4.5" letter-spacing="0.3" font-family="Arial,sans-serif">PEPTIDE STACK</text>
+        <!-- product name -->
+        <text x="57.5" y="93" text-anchor="middle" fill="#1a2a5e" font-size="14" font-weight="900" font-family="Arial,sans-serif">GLOW</text>
+        <text x="57.5" y="105" text-anchor="middle" fill="#1a2a5e" font-size="14" font-weight="900" font-family="Arial,sans-serif">STACK</text>
+        <!-- green badge -->
+        <rect x="28" y="110" width="59" height="18" rx="3" fill="#1a7a4a"/>
+        <text x="57.5" y="119" text-anchor="middle" fill="white" font-size="5" font-weight="700" letter-spacing="0.3" font-family="Arial,sans-serif">GHK-Cu · BPC-157 · TB-500</text>
+        <text x="57.5" y="126" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="4.2" font-family="Arial,sans-serif">PEPTIDE STACK</text>
+        <!-- sub text -->
+        <text x="57.5" y="140" text-anchor="middle" fill="#666" font-size="4.8" letter-spacing="0.3" font-family="Arial,sans-serif">RESEARCH USE ONLY</text>
+        <text x="57.5" y="148" text-anchor="middle" fill="#666" font-size="4.8" letter-spacing="0.3" font-family="Arial,sans-serif">NOT FOR HUMAN USE</text>
+        <!-- molecules -->
+        <circle cx="38" cy="158" r="4" fill="#1a3566" opacity="0.2"/>
+        <circle cx="57.5" cy="154" r="3" fill="#1a7a4a" opacity="0.25"/>
+        <circle cx="77" cy="158" r="4" fill="#b87333" opacity="0.2"/>
+        <line x1="38" y1="158" x2="57.5" y2="154" stroke="#1a2a5e" stroke-width="1.2" opacity="0.2"/>
+        <line x1="57.5" y1="154" x2="77" y2="158" stroke="#1a2a5e" stroke-width="1.2" opacity="0.2"/>
+        <circle cx="48" cy="162" r="2.5" fill="#0a3a6e" opacity="0.15"/>
+        <circle cx="67" cy="162" r="2.5" fill="#1a7a4a" opacity="0.15"/>
+        <!-- cap -->
+        <rect x="24" y="13" width="67" height="21" rx="5" fill="url(#gsc)"/>
+        <rect x="20" y="28" width="75" height="9" rx="3" fill="url(#gsc)"/>
+        <rect x="30" y="11" width="55" height="5" rx="2.5" fill="#d5d5d5"/>
+      </svg>
+    </div>
+
+    <div class="pd-info">
+      <a href="shop.html" class="back-link">← Back to Shop</a>
+      <div class="pd-subtitle">The Ultimate Healing Peptide Stack</div>
+      <h1>GLOW Stack</h1>
+      <div class="pd-tagline-big">REPAIR. RECOVER. REGENERATE.</div>
+      <div class="peptide-badges">
+        <span class="pep-badge ghk">GHK-Cu</span>
+        <span class="pep-badge bpc">BPC-157</span>
+        <span class="pep-badge tb">TB-500</span>
+      </div>
+      <p class="pd-desc">The GLOW Stack is a powerful synergy of three clinically studied peptides — GHK-Cu, BPC-157, and TB-500 — designed to support total-body healing, tissue repair, recovery, and long-term resilience.</p>
+      <div class="pd-price-row">
+        <span class="pd-price">$120.00</span>
+        <span class="pd-badge">3-Peptide Stack</span>
+        <span class="pd-badge-g">Research Use Only</span>
+      </div>
+      <button class="pd-atc" id="pdAtc" data-name="GLOW STACK LAYER ONE" data-price="120">Add To Cart</button>
+      <div class="pd-fda-bar">⚠️ NOT APPROVED BY THE FDA — FOR RESEARCH USE ONLY. Not for human consumption.</div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY BENEFITS STRIP -->
+<section class="kb-strip">
+  <div class="kb-grid">
+    <div class="kb-item">
+      <div class="kb-icon" style="background:#e53935;">💪</div>
+      <div>
+        <h4>Accelerated Healing</h4>
+        <p>Speeds up recovery of muscles, tendons, ligaments, and soft tissues.</p>
+      </div>
+    </div>
+    <div class="kb-item">
+      <div class="kb-icon" style="background:#1a7a4a;">🛡️</div>
+      <div>
+        <h4>Reduces Inflammation</h4>
+        <p>Supports a healthy inflammatory response and protects tissues from damage.</p>
+      </div>
+    </div>
+    <div class="kb-item">
+      <div class="kb-icon" style="background:#8b5cf6;">✨</div>
+      <div>
+        <h4>Skin Health &amp; Anti-Aging</h4>
+        <p>Improves skin tone, elasticity, hydration, and reduces the appearance of fine lines.</p>
+      </div>
+    </div>
+    <div class="kb-item">
+      <div class="kb-icon" style="background:#1565c0;">🔄</div>
+      <div>
+        <h4>Enhanced Recovery</h4>
+        <p>Shortens recovery time, reduces pain, and improves overall resilience.</p>
+      </div>
+    </div>
+    <div class="kb-item">
+      <div class="kb-icon" style="background:#f59e0b;">🌿</div>
+      <div>
+        <h4>Overall Wellness</h4>
+        <p>Supports gut health, immune function, and cellular regeneration for total-body wellness.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE STACK -->
+<section style="background:#fafafa;padding:1px 0;">
+  <div class="pd-section">
+    <h2>The Stack</h2>
+    <div class="stack-grid">
+      <div class="stack-card">
+        <div class="stack-icon" style="background:#e3f0ff;">🧬</div>
+        <div>
+          <div class="sc-sub">Copper Peptide</div>
+          <h4 style="color:#1a3566;">GHK-Cu</h4>
+          <p>Supports collagen production, skin rejuvenation, and antioxidant defense. Prepares and protects tissues to enhance the repair environment.</p>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-icon" style="background:#e6f7ee;">🩹</div>
+        <div>
+          <div class="sc-sub">Body Protection Compound</div>
+          <h4 style="color:#155724;">BPC-157</h4>
+          <p>Accelerates healing of tendons, ligaments, muscles, and the gut. Reduces inflammation and targets damaged tissues to accelerate repair.</p>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-icon" style="background:#e8f0fc;">🔬</div>
+        <div>
+          <div class="sc-sub">Thymosin Beta-4</div>
+          <h4 style="color:#0b2e4a;">TB-500</h4>
+          <p>Promotes cell migration, angiogenesis, and tissue regeneration. Restores tissue structure and optimizes healing throughout the body.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="pd-section">
+    <h2>How It Works</h2>
+    <div class="hiw-3col">
+      <div class="hiw-card">
+        <div class="hiw-num" style="background:#1a3566;">1</div>
+        <h4 style="color:#1a3566;">Protect &amp; Signal</h4>
+        <p>GHK-Cu enhances antioxidant defense, supports collagen synthesis, and promotes cellular repair — preparing the body for accelerated healing.</p>
+      </div>
+      <div class="hiw-card">
+        <div class="hiw-num" style="background:#155724;">2</div>
+        <h4 style="color:#155724;">Repair &amp; Regenerate</h4>
+        <p>BPC-157 protects tissues, reduces inflammation, and accelerates healing of tendons, ligaments, muscles, and the gut.</p>
+      </div>
+      <div class="hiw-card">
+        <div class="hiw-num" style="background:#0b2e4a;">3</div>
+        <h4 style="color:#0b2e4a;">Restore &amp; Optimize</h4>
+        <p>TB-500 promotes cell migration, angiogenesis, and the formation of new blood vessels to restore damaged tissues.</p>
+      </div>
+    </div>
+    <div class="synergy-banner">
+      TOGETHER, THEY CREATE A SYNERGISTIC EFFECT THAT ENHANCES HEALING, REDUCES DOWNTIME, AND OPTIMIZES LONG-TERM HEALTH.
+    </div>
+  </div>
+</section>
+
+<!-- PEPTIDE OVERVIEW TABLE -->
+<section style="background:#fafafa;padding:1px 0;">
+  <div class="pd-section">
+    <h2>Peptide Overview</h2>
+    <div style="overflow-x:auto;">
+      <table class="peptide-table">
+        <thead>
+          <tr>
+            <th>Peptide</th>
+            <th>Key Functions</th>
+            <th>Benefits</th>
+            <th>Synergistic Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="ghk-row">
+            <td>
+              <div class="pep-name">GHK-Cu</div>
+              <div class="pep-type">Copper Peptide</div>
+            </td>
+            <td><ul><li>Stimulates collagen &amp; elastin</li><li>Powerful antioxidant</li><li>Supports wound healing</li></ul></td>
+            <td><ul><li>Improves skin texture</li><li>Reduces fine lines</li><li>Protects cells from damage</li></ul></td>
+            <td>Prepares and protects tissues, enhances repair environment</td>
+          </tr>
+          <tr class="bpc-row">
+            <td>
+              <div class="pep-name">BPC-157</div>
+              <div class="pep-type">Body Protection Compound</div>
+            </td>
+            <td><ul><li>Anti-inflammatory</li><li>Promotes angiogenesis</li><li>Supports gut &amp; tissue repair</li></ul></td>
+            <td><ul><li>Faster recovery</li><li>Healing of soft tissues</li><li>Gut lining protection</li></ul></td>
+            <td>Targets damaged tissues and accelerates repair</td>
+          </tr>
+          <tr class="tb-row">
+            <td>
+              <div class="pep-name">TB-500</div>
+              <div class="pep-type">Thymosin Beta-4</div>
+            </td>
+            <td><ul><li>Promotes cell migration</li><li>Stimulates angiogenesis</li><li>Enhances tissue elasticity</li></ul></td>
+            <td><ul><li>Improves flexibility</li><li>Supports muscle recovery</li><li>Reduces scar tissue</li></ul></td>
+            <td>Restores tissue structure and optimizes healing</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- DOSAGE GUIDELINES -->
+<section>
+  <div class="pd-section">
+    <h2>Dosage Guidelines (Research Use)</h2>
+    <div class="dosage-cols">
+      <div class="dosage-card featured">
+        <h4>💉 Subcutaneous (Preferred)</h4>
+        <div class="dosage-amount">200–300 mcg</div>
+        <ul>
+          <li>Total per day (combined peptides)</li>
+          <li>1–2 times per day</li>
+          <li>Best absorption &amp; systemic benefits</li>
+        </ul>
+      </div>
+      <div class="dosage-card">
+        <h4>💧 Topical / Microneedling</h4>
+        <div class="dosage-amount">50–100 mcg</div>
+        <ul>
+          <li>Total per day</li>
+          <li>2–3 times per week</li>
+          <li>Or as needed</li>
+        </ul>
+      </div>
+      <div class="dosage-card">
+        <h4>📅 Cycle Length</h4>
+        <div class="dosage-amount">8–12 Weeks</div>
+        <ul>
+          <li>Then reassess goals</li>
+          <li>Consider a break of 2–4 weeks</li>
+          <li>Adjust by individual response</li>
+        </ul>
+      </div>
+    </div>
+    <div class="dosage-note">⚠️ Dosages are general guidelines for research use only. Adjust based on individual response and goals.</div>
+  </div>
+</section>
+
+<!-- POTENTIAL RESULTS -->
+<section style="background:#fafafa;padding:1px 0;">
+  <div class="pd-section">
+    <h2>Potential Results (With Consistent Use)</h2>
+    <div class="results-list">
+      <div class="result-item">Faster recovery and reduced downtime</div>
+      <div class="result-item">Stronger, healthier joints, tendons, and ligaments</div>
+      <div class="result-item">Improved skin tone, elasticity, and hydration</div>
+      <div class="result-item">Reduced inflammation and pain</div>
+      <div class="result-item">Better gut health and digestion</div>
+      <div class="result-item">Increased energy and overall well-being</div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION METHODS -->
+<section>
+  <div class="pd-section">
+    <h2>Application Methods</h2>
+    <div class="admin-grid">
+      <div class="admin-card">
+        <div class="a-icon">💉</div>
+        <h4>Subcutaneous (SQ)</h4>
+        <p>Best absorption and systemic benefits. Most common research protocol.</p>
+      </div>
+      <div class="admin-card">
+        <div class="a-icon">💧</div>
+        <h4>Topical Serum</h4>
+        <p>Apply to skin for anti-aging and localized healing benefits.</p>
+      </div>
+      <div class="admin-card">
+        <div class="a-icon">🪡</div>
+        <h4>Microneedling</h4>
+        <p>Enhances peptide penetration for targeted, deeper skin results.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IDEAL FOR + AT A GLANCE -->
+<section style="background:#fafafa;padding:1px 0;">
+  <div class="pd-section">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;">
+      <div>
+        <h2>Ideal For</h2>
+        <div class="ideal-grid">
+          <div class="ideal-card">
+            <div class="ic-icon">🏃</div>
+            <p>Athletes &amp; Active Individuals</p>
+          </div>
+          <div class="ideal-card">
+            <div class="ic-icon">🩺</div>
+            <p>Injury Recovery &amp; Post-Surgery</p>
+          </div>
+          <div class="ideal-card">
+            <div class="ic-icon">✨</div>
+            <p>Anti-Aging &amp; Skin Rejuvenation</p>
+          </div>
+          <div class="ideal-card">
+            <div class="ic-icon">🫁</div>
+            <p>Gut Health &amp; Digestive Support</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2>Stack at a Glance</h2>
+        <div class="glance-list">
+          <div class="glance-item">3 powerful peptides working in synergy</div>
+          <div class="glance-item">Targets multiple pathways for maximum results</div>
+          <div class="glance-item">Supports repair, regeneration, and rejuvenation</div>
+          <div class="glance-item">Ideal for short-term recovery or long-term optimization</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAFETY & TOLERABILITY -->
+<section>
+  <div class="pd-section">
+    <h2>Safety &amp; Tolerability (Research Use)</h2>
+    <div class="safety-cols">
+      <div class="safety-good">
+        <h4>Safety Profile</h4>
+        <ul>
+          <li>Peptides in the GLOW Stack have shown acceptable safety profiles in studies</li>
+          <li>Minimal side effects when used as directed</li>
+          <li>Well tolerated in most research models</li>
+          <li>Not for human consumption</li>
+        </ul>
+      </div>
+      <div class="notes-card">
+        <h4>Important Notes</h4>
+        <ul>
+          <li>For research use only. Not for human consumption.</li>
+          <li>Store refrigerated (2–8°C / 36–46°F).</li>
+          <li>Reconstitute with bacteriostatic water.</li>
+          <li>Use in a clean, sterile environment.</li>
+          <li>Always consult a qualified healthcare professional before use.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TAGLINE BANNER -->
+<div class="tagline-banner">
+  <h3>HEAL FASTER. REBUILD STRONGER. GLOW FROM WITHIN.</h3>
+  <div class="sub-tag">SCIENCE. SYNERGY. RESULTS.</div>
+  <p>The GLOW Stack is your foundation for total-body healing and peak performance.</p>
+</div>
+
+<!-- FINAL DISCLAIMER -->
+<div class="final-disclaimer">
+  <strong>IMPORTANT DISCLAIMER:</strong> GLOW Stack is not approved by the FDA. For Research Use Only — Not for human consumption. All products on this site are for Research and Development use only. The statements made within this website have not been evaluated by the US Food and Drug Administration.
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="61205B8A-CA41-4D01-BDCD-774BFB032CE1.png" alt="Helix-Pharm" class="footer-logo-img">
+  </div>
+  <p class="tagline">We take pride in treating every client,<br>large or small, with the utmost regard.</p>
+  <div class="footer-cols">
+    <div class="footer-col">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop All</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <div class="support-email">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" fill="none" stroke="#888" stroke-width="2"/></svg>
+        info@helix-pharm.com
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 helix-pharm.com. All Rights Reserved.</p>
+    <div class="footer-legal">
+      <p>All products on this site are for Research, Development use only. Products are Not for Human consumption of any kind.</p>
+      <p>Helix-Pharm is a chemical supplier. Not a compounding pharmacy or outsourcing facility as defined under 503A/503B of the Federal Food, Drug, and Cosmetic act.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head"><span>Your Cart</span><button class="cart-x" id="cartClose">✕</button></div>
+  <div class="cart-body" id="cartBody"><p class="cart-empty-msg">Your cart is empty.</p></div>
+  <div class="cart-foot">
+    <div class="cart-subtotal"><span>Subtotal</span><span id="cartTotal">$0.00</span></div>
+    <button class="checkout-btn">Checkout</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
+<script src="js/main.js"></script>
+<script>
+  document.getElementById('pdAtc').addEventListener('click', function() {
+    const name = this.dataset.name;
+    const price = parseFloat(this.dataset.price);
+    if (typeof addToCart === 'function') {
+      addToCart(name, price);
+      this.textContent = 'Added!';
+      this.classList.add('added');
+      setTimeout(() => { this.textContent = 'Add To Cart'; this.classList.remove('added'); }, 2000);
+    }
+  });
+</script>
+</body>
+</html>
