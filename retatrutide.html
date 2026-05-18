@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retatrutide (GLP-3) — Helix-Pharm</title>
+  <meta name="description" content="Retatrutide Triple Agonist Peptide — GIP + GLP-1 + Glucagon. Research use only. 10mg.">
+  <link rel="stylesheet" href="css/styles.css?v=3">
+  <style>
+    /* ── PRODUCT PAGE STYLES ── */
+    .pd-hero {
+      background: var(--beige);
+      padding: 2.5rem 1.5rem;
+    }
+    .pd-hero-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    @media(max-width:640px){ .pd-hero-inner{ grid-template-columns:1fr; gap:1.5rem; } }
+
+    .pd-vial-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .pd-info h1 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 900;
+      color: var(--black);
+      margin-bottom: .3rem;
+    }
+    .pd-info .pd-subtitle {
+      font-size: .95rem;
+      color: #1565a8;
+      font-weight: 700;
+      letter-spacing: .05em;
+      margin-bottom: 1rem;
+    }
+    .pd-info .pd-tagline {
+      font-size: .92rem;
+      color: var(--text-mid);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    .pd-price-row {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .pd-price {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--black);
+    }
+    .pd-badge {
+      background: #1a1a1a;
+      color: white;
+      font-size: .72rem;
+      font-weight: 700;
+      padding: .3rem .8rem;
+      border-radius: 50px;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+    .pd-atc {
+      display: block;
+      width: 100%;
+      background: var(--black);
+      color: white;
+      text-align: center;
+      padding: .9rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity .2s;
+      margin-bottom: .8rem;
+    }
+    .pd-atc:hover { opacity: .82; }
+    .pd-atc.added { background: #1a6e3c; }
+
+    .pd-disclaimer-bar {
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      border-radius: 8px;
+      padding: .75rem 1rem;
+      font-size: .78rem;
+      color: #856404;
+      font-weight: 600;
+    }
+
+    /* ── KEY FEATURES STRIP ── */
+    .kf-strip {
+      background: var(--black);
+      padding: 2rem 1.5rem;
+    }
+    .kf-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    @media(max-width:700px){ .kf-grid{ grid-template-columns: repeat(2,1fr); } }
+    .kf-item { text-align: center; }
+    .kf-icon { font-size: 1.8rem; margin-bottom: .5rem; }
+    .kf-item h4 { color: white; font-size: .82rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; margin-bottom: .4rem; }
+    .kf-item p  { color: rgba(255,255,255,.6); font-size: .78rem; line-height: 1.5; }
+
+    /* ── SECTIONS ── */
+    .pd-section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+    .pd-section h2 {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--black);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 1.2rem;
+      padding-bottom: .6rem;
+      border-bottom: 3px solid var(--black);
+    }
+    .pd-section.alt { background: var(--beige-light); }
+
+    /* What is */
+    .receptor-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    @media(max-width:600px){ .receptor-grid{ grid-template-columns:1fr; } }
+    .receptor-card {
+      background: var(--white);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 1.2rem;
+    }
+    .receptor-card .r-tag {
+      display: inline-block;
+      font-size: .75rem;
+      font-weight: 800;
+      padding: .25rem .7rem;
+      border-radius: 50px;
+      margin-bottom: .6rem;
+    }
+    .gip-tag  { background: #e8d5f5; color: #6a0dad; }
+    .glp-tag  { background: #d5f0e8; color: #0d6a3d; }
+    .gluc-tag { background: #fde8c8; color: #a0520d; }
+    .receptor-card h4 { font-size: .85rem; font-weight: 700; color: var(--black); margin-bottom: .4rem; }
+    .receptor-card p  { font-size: .82rem; color: var(--text-mid); }
+
+    /* Benefits */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 1rem;
+    }
+    @media(max-width:600px){ .benefits-grid{ grid-template-columns:1fr; } }
+    .benefit-card {
+      display: flex;
+      align-items: flex-start;
+      gap: .9rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.1rem;
+    }
+    .benefit-icon {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .benefit-card h4 { font-size: .88rem; font-weight: 800; color: var(--black); margin-bottom: .3rem; text-transform: uppercase; letter-spacing: .04em; }
+    .benefit-card p  { font-size: .8rem; color: var(--text-mid); line-height: 1.5; }
+
+    /* Key highlight */
+    .key-highlight {
+      background: var(--black);
+      color: white;
+      border-radius: 14px;
+      padding: 2rem;
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .key-highlight .kh-icon { font-size: 2.5rem; margin-bottom: .8rem; }
+    .key-highlight h3 { font-size: 1rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.7); margin-bottom: .6rem; }
+    .key-highlight p  { font-size: 1.1rem; font-weight: 700; color: white; max-width: 500px; margin: 0 auto; line-height: 1.5; }
+
+    /* Clinical data */
+    .clinical-bar-group { margin-bottom: 1.2rem; }
+    .clinical-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: .85rem;
+      font-weight: 600;
+      margin-bottom: .35rem;
+    }
+    .clinical-bar-bg {
+      height: 28px;
+      background: #f0f0f0;
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+    }
+    .clinical-bar-fill {
+      height: 100%;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      padding-left: .7rem;
+      font-size: .75rem;
+      font-weight: 700;
+      color: white;
+      white-space: nowrap;
+    }
+    .bar-r12 { background: #1a3a8a; width: 100%; }
+    .bar-r8  { background: #2a5abf; width: 91%; }
+    .bar-r4  { background: #5b8cdf; width: 71%; }
+    .bar-sem { background: #a0a0a0; width: 54%; }
+
+    /* Dosage table */
+    .dosage-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 10px;
+      overflow: hidden;
+      font-size: .88rem;
+    }
+    .dosage-table th {
+      background: var(--black);
+      color: white;
+      padding: .75rem 1rem;
+      text-align: left;
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .dosage-table td {
+      padding: .75rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .dosage-table tr:last-child td { border-bottom: none; }
+    .dosage-table tr:nth-child(even) td { background: var(--beige-light); }
+    .level-low  { background: #d4edda; color: #155724; padding: .2rem .6rem; border-radius: 50px; font-weight: 700; font-size: .75rem; }
+    .level-mod  { background: #fff3cd; color: #856404; padding: .2rem .6rem; border-radius: 50px; font-weight: 700; font-size: .75rem; }
+    .level-high { background: #f8d7da; color: #721c24; padding: .2rem .6rem; border-radius: 50px; font-weight: 700; font-size: .75rem; }
+
+    .admin-box {
+      background: #e8f0fe;
+      border: 1px solid #b3c6f7;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      margin-top: 1rem;
+      font-size: .88rem;
+      color: #1a3a8a;
+    }
+    .admin-box strong { display: block; margin-bottom: .3rem; font-size: .82rem; text-transform: uppercase; letter-spacing: .06em; }
+
+    /* Side effects */
+    .se-list {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: .8rem;
+    }
+    @media(max-width:500px){ .se-list{ grid-template-columns: repeat(2,1fr); } }
+    .se-item {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: .7rem .9rem;
+      font-size: .85rem;
+      font-weight: 500;
+    }
+    .se-item::before { content: '⚠️'; font-size: .9rem; }
+
+    /* At a glance */
+    .glance-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 1rem;
+    }
+    @media(max-width:500px){ .glance-grid{ grid-template-columns:1fr; } }
+    .glance-item {
+      display: flex;
+      align-items: flex-start;
+      gap: .8rem;
+      padding: 1rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+    .glance-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .glance-item h4 { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--text-mid); margin-bottom: .2rem; }
+    .glance-item p  { font-size: .88rem; font-weight: 600; color: var(--black); }
+
+    /* Final disclaimer */
+    .final-disclaimer {
+      background: #1a1a1a;
+      color: rgba(255,255,255,.75);
+      padding: 1.5rem;
+      font-size: .78rem;
+      line-height: 1.7;
+      text-align: center;
+    }
+    .final-disclaimer strong { color: white; }
+
+    /* Back link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .88rem;
+      font-weight: 600;
+      color: var(--text-mid);
+      padding: .5rem 0;
+      transition: color .2s;
+    }
+    .back-link:hover { color: var(--black); }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="header-inner">
+    <button class="hamburger" id="menuBtn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="index.html" class="logo">
+      <div class="logo-img-wrap" style="background:transparent;padding:0;border-radius:0;">
+        <img src="61205B8A-CA41-4D01-BDCD-774BFB032CE1.png" alt="Helix-Pharm" class="logo-img"
+             style="height:54px;width:54px;border-radius:50%;object-fit:cover;display:block;">
+      </div>
+    </a>
+    <button class="cart-btn" id="cartBtn" aria-label="Cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- SLIDE-OUT MENU -->
+<div class="menu-overlay" id="menuOverlay"></div>
+<nav class="slide-menu" id="slideMenu">
+  <div class="slide-menu-header">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" stroke="#888" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      <input type="text" placeholder="Search for...">
+    </div>
+    <button class="menu-close" id="menuClose">✕</button>
+  </div>
+  <div class="slide-menu-links">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop All</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main style="padding-top:64px;">
+
+  <!-- BACK LINK -->
+  <div style="max-width:1000px;margin:0 auto;padding:.8rem 1.5rem;">
+    <a href="shop.html" class="back-link">← Back to Shop</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="pd-hero">
+    <div class="pd-hero-inner">
+      <!-- Vial Image -->
+      <div class="pd-vial-wrap">
+        <svg width="180" height="320" viewBox="0 0 180 320" xmlns="http://www.w3.org/2000/svg"
+             style="filter:drop-shadow(6px 10px 24px rgba(0,0,0,.25))">
+          <defs>
+            <linearGradient id="pdcap" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%"   stop-color="#888"/>
+              <stop offset="40%"  stop-color="#ddd"/>
+              <stop offset="100%" stop-color="#888"/>
+            </linearGradient>
+            <linearGradient id="pdglass" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%"   stop-color="rgba(215,200,175,0.55)"/>
+              <stop offset="50%"  stop-color="rgba(242,230,208,0.88)"/>
+              <stop offset="100%" stop-color="rgba(195,180,158,0.5)"/>
+            </linearGradient>
+          </defs>
+          <!-- Glass body -->
+          <rect x="30" y="45" width="120" height="262" rx="8" fill="url(#pdglass)" stroke="#c2ae90" stroke-width="1.5"/>
+          <!-- Label -->
+          <rect x="30" y="80" width="120" height="190" rx="3" fill="#1a1a1a"/>
+          <!-- Hex watermarks -->
+          <polygon points="55,105 67,105 73,116 67,127 55,127 49,116" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1.2"/>
+          <polygon points="85,105 97,105 103,116 97,127 85,127 79,116" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1.2"/>
+          <polygon points="113,105 125,105 131,116 125,127 113,127 107,116" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1.2"/>
+          <polygon points="70,122 82,122 88,133 82,144 70,144 64,133" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1.2"/>
+          <polygon points="100,122 112,122 118,133 112,144 100,144 94,133" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1.2"/>
+          <!-- Brand -->
+          <text x="90" y="100" text-anchor="middle" fill="white" font-size="7.5" font-weight="700" letter-spacing="1.2" font-family="Arial,sans-serif">HELIX-PHARM</text>
+          <line x1="38" y1="104" x2="142" y2="104" stroke="rgba(255,255,255,0.2)" stroke-width="0.7"/>
+          <!-- Product name -->
+          <text x="90" y="158" text-anchor="middle" fill="white" font-size="14" font-weight="900" font-family="Arial,sans-serif">RETATRUTIDE</text>
+          <!-- Sub -->
+          <text x="90" y="175" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-size="9" font-family="Arial,sans-serif">Triple Agonist Peptide</text>
+          <!-- GIP GLP GLUCAGON badges -->
+          <rect x="40" y="182" width="100" height="18" rx="9" fill="rgba(26,90,180,0.8)"/>
+          <text x="90" y="194" text-anchor="middle" fill="white" font-size="7.5" font-weight="700" letter-spacing="0.8" font-family="Arial,sans-serif">GIP + GLP-1 + GLUCAGON</text>
+          <!-- Dosage -->
+          <text x="90" y="222" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="18" font-weight="900" font-family="Arial,sans-serif">10mg</text>
+          <!-- Research use -->
+          <text x="90" y="243" text-anchor="middle" fill="rgba(255,255,255,0.45)" font-size="7" letter-spacing="0.6" font-family="Arial,sans-serif">RESEARCH USE ONLY</text>
+          <text x="90" y="254" text-anchor="middle" fill="rgba(255,255,255,0.45)" font-size="7" letter-spacing="0.6" font-family="Arial,sans-serif">NOT FOR HUMAN USE</text>
+          <!-- Metal cap -->
+          <rect x="36" y="18" width="108" height="30" rx="5" fill="url(#pdcap)"/>
+          <rect x="30" y="42" width="120" height="10" rx="3" fill="url(#pdcap)"/>
+          <rect x="46" y="14" width="88" height="8" rx="2.5" fill="#aaa"/>
+        </svg>
+      </div>
+
+      <!-- Info -->
+      <div class="pd-info">
+        <h1>RETATRUTIDE</h1>
+        <div class="pd-subtitle">GIP + GLP-1 + GLUCAGON RECEPTOR AGONIST</div>
+        <p class="pd-tagline">The Next Generation Triple Hormone Agonist. A multi-targeted peptide showing exceptional potential for weight loss, metabolic health, and beyond.</p>
+
+        <div class="pd-price-row">
+          <span class="pd-price">$150.00</span>
+          <span class="pd-badge">10mg · Research Use Only</span>
+        </div>
+
+        <button class="pd-atc" id="pdAtcBtn" data-name="RETATRUTIDE" data-price="150">Add To Cart</button>
+
+        <div class="pd-disclaimer-bar">
+          ⚠️ For research purposes only. Not for human consumption. Not FDA approved.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY FEATURES STRIP -->
+  <div class="kf-strip">
+    <div class="kf-grid">
+      <div class="kf-item">
+        <div class="kf-icon">⚖️</div>
+        <h4>Max Weight Loss Potential</h4>
+        <p>Greater % body weight reduction vs dual-agonist therapies</p>
+      </div>
+      <div class="kf-item">
+        <div class="kf-icon">🔥</div>
+        <h4>Metabolic Powerhouse</h4>
+        <p>Improves glucose control, insulin sensitivity & lipid metabolism</p>
+      </div>
+      <div class="kf-item">
+        <div class="kf-icon">🛡️</div>
+        <h4>Multi-System Benefits</h4>
+        <p>Supports heart, liver, inflammation markers & overall metabolic health</p>
+      </div>
+      <div class="kf-item">
+        <div class="kf-icon">📈</div>
+        <h4>Next-Gen Innovation</h4>
+        <p>Designed for superior efficacy through triple hormone action</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT IS RETATRUTIDE -->
+  <div style="background:var(--white);">
+    <div class="pd-section">
+      <h2>What Is Retatrutide?</h2>
+      <p style="margin-bottom:1.2rem;font-size:.92rem;">Retatrutide is an experimental peptide that activates three hormone receptors: <strong>GIP</strong>, <strong>GLP-1</strong>, and <strong>Glucagon</strong>. By targeting all three, it influences multiple metabolic pathways that regulate appetite, blood sugar, energy expenditure, and fat metabolism.</p>
+      <div class="receptor-grid">
+        <div class="receptor-card">
+          <span class="r-tag gip-tag">GIP</span>
+          <h4>Glucose-dependent Insulinotropic Polypeptide</h4>
+          <p>Enhances insulin secretion, fat storage regulation, and metabolic efficiency.</p>
+        </div>
+        <div class="receptor-card">
+          <span class="r-tag glp-tag">GLP-1</span>
+          <h4>Glucagon-like Peptide-1</h4>
+          <p>Reduces appetite, slows gastric emptying, improves glucose control, and promotes satiety.</p>
+        </div>
+        <div class="receptor-card">
+          <span class="r-tag gluc-tag">GLUCAGON</span>
+          <h4>Glucagon Receptor</h4>
+          <p>Increases energy expenditure, stimulates fat breakdown, and supports metabolic rate.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POTENTIAL BENEFITS -->
+  <div style="background:var(--beige-light);">
+    <div class="pd-section">
+      <h2>Potential Benefits</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon" style="background:#e8f0fe;">⚖️</div>
+          <div>
+            <h4>Significant Weight Loss</h4>
+            <p>Clinical studies show up to ~24% average body weight reduction at higher doses.</p>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon" style="background:#d4edda;">🩸</div>
+          <div>
+            <h4>Improved Blood Sugar Control</h4>
+            <p>Lower A1C, improved insulin sensitivity & better glycemic management.</p>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon" style="background:#fff3cd;">🔥</div>
+          <div>
+            <h4>Increased Energy Expenditure</h4>
+            <p>Glucagon activity may boost thermogenesis and calorie burn.</p>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon" style="background:#f8d7da;">🍽️</div>
+          <div>
+            <h4>Reduced Appetite & Cravings</h4>
+            <p>Enhanced satiety and delayed gastric emptying help reduce overall food intake.</p>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon" style="background:#e2f0cb;">🫀</div>
+          <div>
+            <h4>Liver & Metabolic Health</h4>
+            <p>May reduce liver fat and improve markers of NAFLD and overall metabolic function.</p>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon" style="background:#fce4ec;">❤️</div>
+          <div>
+            <h4>Cardiovascular Benefits</h4>
+            <p>Potential improvements in blood pressure, lipids, and other CV risk factors.</p>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon" style="background:#e8eaf6;">🛡️</div>
+          <div>
+            <h4>Anti-Inflammatory Effects</h4>
+            <p>May reduce systemic inflammation and improve overall healthspan markers.</p>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:.75rem;color:var(--text-light);margin-top:1rem;">*Based on clinical trial data & preclinical studies.</p>
+    </div>
+  </div>
+
+  <!-- KEY HIGHLIGHT -->
+  <div style="background:var(--white);">
+    <div class="pd-section" style="padding-bottom:1rem;">
+      <div class="key-highlight">
+        <div class="kh-icon">🎯</div>
+        <h3>Key Highlight</h3>
+        <p>In head-to-head trials, Retatrutide outperformed semaglutide at every dose tested for weight loss.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLINICAL DATA -->
+  <div style="background:var(--white);">
+    <div class="pd-section" style="padding-top:1rem;">
+      <h2>Clinical Data Snapshot</h2>
+      <p style="font-size:.88rem;margin-bottom:1.5rem;"><strong>Phase 2 Trial (48 Weeks)</strong> — % Change in Body Weight</p>
+
+      <div class="clinical-bar-group">
+        <div class="clinical-bar-label">
+          <span>Retatrutide 12mg</span><span style="color:#1a3a8a;font-weight:800;">~24% loss</span>
+        </div>
+        <div class="clinical-bar-bg">
+          <div class="clinical-bar-fill bar-r12">Retatrutide 12mg</div>
+        </div>
+      </div>
+      <div class="clinical-bar-group">
+        <div class="clinical-bar-label">
+          <span>Retatrutide 8mg</span><span style="color:#2a5abf;font-weight:800;">~22% loss</span>
+        </div>
+        <div class="clinical-bar-bg">
+          <div class="clinical-bar-fill bar-r8">Retatrutide 8mg</div>
+        </div>
+      </div>
+      <div class="clinical-bar-group">
+        <div class="clinical-bar-label">
+          <span>Retatrutide 4mg</span><span style="color:#5b8cdf;font-weight:800;">~17% loss</span>
+        </div>
+        <div class="clinical-bar-bg">
+          <div class="clinical-bar-fill bar-r4">Retatrutide 4mg</div>
+        </div>
+      </div>
+      <div class="clinical-bar-group">
+        <div class="clinical-bar-label">
+          <span>Semaglutide 2.4mg</span><span style="color:#888;font-weight:800;">~13% loss</span>
+        </div>
+        <div class="clinical-bar-bg">
+          <div class="clinical-bar-fill bar-sem">Semaglutide 2.4mg</div>
+        </div>
+      </div>
+      <p style="font-size:.72rem;color:var(--text-light);margin-top:.8rem;">Source: Lilly Clinical Trial Data (SURMOUNT-5 Phase 2). Data presented is approximate.</p>
+    </div>
+  </div>
+
+  <!-- DOSAGE GUIDE -->
+  <div style="background:var(--beige-light);">
+    <div class="pd-section">
+      <h2>Dosage Guide <span style="font-size:.75rem;font-weight:500;text-transform:none;letter-spacing:0;">(Research Use Only)</span></h2>
+      <p style="font-size:.85rem;margin-bottom:1.2rem;">Typical dosing ranges used in clinical research.</p>
+      <table class="dosage-table">
+        <thead>
+          <tr>
+            <th>Dosage Level</th>
+            <th>Weekly Dose (mg)</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="level-low">LOW</span></td>
+            <td><strong>1 – 4 mg</strong></td>
+            <td>Starting range in early clinical studies</td>
+          </tr>
+          <tr>
+            <td><span class="level-mod">MODERATE</span></td>
+            <td><strong>4 – 8 mg</strong></td>
+            <td>Common dose range with strong efficacy</td>
+          </tr>
+          <tr>
+            <td><span class="level-high">HIGH</span></td>
+            <td><strong>8 – 12 mg+</strong></td>
+            <td>Highest tested doses with greatest weight loss</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="admin-box">
+        <strong>💉 Administration</strong>
+        Subcutaneous injection, once weekly. Peptide is supplied as a lyophilized powder and reconstituted with bacteriostatic water.
+      </div>
+    </div>
+  </div>
+
+  <!-- SIDE EFFECTS + AT A GLANCE -->
+  <div style="background:var(--white);">
+    <div class="pd-section">
+      <h2>Common Side Effects</h2>
+      <p style="font-size:.85rem;margin-bottom:1.2rem;">Generally mild to moderate and dose-dependent. Most side effects decrease over time as the body adjusts.</p>
+      <div class="se-list">
+        <div class="se-item">Nausea</div>
+        <div class="se-item">Reduced Appetite</div>
+        <div class="se-item">Vomiting</div>
+        <div class="se-item">Diarrhea / Constipation</div>
+        <div class="se-item">Headache</div>
+        <div class="se-item">Fatigue</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AT A GLANCE -->
+  <div style="background:var(--beige-light);">
+    <div class="pd-section">
+      <h2>Retatrutide At A Glance</h2>
+      <div class="glance-grid">
+        <div class="glance-item">
+          <span class="glance-icon">🔬</span>
+          <div>
+            <h4>Type</h4>
+            <p>Triple Agonist Peptide (GIP / GLP-1 / Glucagon)</p>
+          </div>
+        </div>
+        <div class="glance-item">
+          <span class="glance-icon">🎯</span>
+          <div>
+            <h4>Primary Use in Research</h4>
+            <p>Weight Loss, Type 2 Diabetes, Metabolic Health</p>
+          </div>
+        </div>
+        <div class="glance-item">
+          <span class="glance-icon">📅</span>
+          <div>
+            <h4>Study Duration</h4>
+            <p>Up to 48–72 weeks in clinical trials</p>
+          </div>
+        </div>
+        <div class="glance-item">
+          <span class="glance-icon">⚖️</span>
+          <div>
+            <h4>Max Weight Loss Observed</h4>
+            <p>~24% average body weight (48 weeks)</p>
+          </div>
+        </div>
+        <div class="glance-item">
+          <span class="glance-icon">💉</span>
+          <div>
+            <h4>Dosing Frequency</h4>
+            <p>Once Weekly (Subcutaneous)</p>
+          </div>
+        </div>
+        <div class="glance-item">
+          <span class="glance-icon">📦</span>
+          <div>
+            <h4>Available As</h4>
+            <p>Lyophilized Powder · 10mg per vial</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINAL DISCLAIMER -->
+  <div class="final-disclaimer">
+    <p>⚠️ <strong>Important Disclaimer:</strong> Retatrutide is an experimental peptide and is not approved by the FDA for human use. This page is for educational and research purposes only and does not constitute medical advice. <strong>Research Use Only — Not For Human Use.</strong> Always consult a qualified healthcare professional before starting any peptide protocol.</p>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="61205B8A-CA41-4D01-BDCD-774BFB032CE1.png" alt="Helix-Pharm" class="footer-logo-img"
+         style="height:100px;width:100px;border-radius:50%;object-fit:cover;">
+  </div>
+  <p class="tagline">We take pride in treating every client,<br>large or small, with the utmost regard.</p>
+  <div class="footer-cols">
+    <div class="footer-col">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop All</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <div class="support-email">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" fill="none" stroke="#888" stroke-width="2"/></svg>
+        info@helix-pharm.com
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 helix-pharm.com. All Rights Reserved.</p>
+    <div class="footer-legal">
+      <p>All products on this site are for Research, Development use only. Products are Not for Human consumption of any kind. The statements made within this website have not been evaluated by the US Food and Drug Administration.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <span>Your Cart</span>
+    <button class="cart-x" id="cartClose">✕</button>
+  </div>
+  <div class="cart-body" id="cartBody"><p class="cart-empty-msg">Your cart is empty.</p></div>
+  <div class="cart-foot">
+    <div class="cart-subtotal"><span>Subtotal</span><span id="cartTotal">$0.00</span></div>
+    <button class="checkout-btn">Checkout</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
+
+<script src="js/main.js?v=3"></script>
+<script>
+  // Wire up the product page Add to Cart button
+  document.getElementById('pdAtcBtn').addEventListener('click', function() {
+    addToCart(this.dataset.name, this.dataset.price);
+    this.textContent = 'Added ✓';
+    this.classList.add('added');
+    setTimeout(() => {
+      this.textContent = 'Add To Cart';
+      this.classList.remove('added');
+    }, 1800);
+  });
+</script>
+</body>
+</html>
