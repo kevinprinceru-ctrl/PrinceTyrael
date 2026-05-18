@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GHK-Cu — Copper Peptide | Helix-Pharm</title>
+  <meta name="description" content="GHK-Cu (Glycyl-L-Histidyl-L-Lysine Copper) — The Copper Peptide. 5mg Research Use Only. Collagen synthesis, wound healing, hair growth, anti-aging.">
+  <link rel="stylesheet" href="css/styles.css?v=3">
+  <style>
+    .pd-hero { background: #f0f4f8; padding: 2.5rem 1.5rem; }
+    .pd-hero-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    @media(max-width:640px){ .pd-hero-inner{ grid-template-columns:1fr; gap:1.5rem; } }
+    .pd-vial-wrap { display:flex; justify-content:center; align-items:center; padding:1rem; }
+    .pd-info h1 { font-size:clamp(1.8rem,3vw,2.4rem); font-weight:900; color:var(--black); margin-bottom:.3rem; }
+    .pd-info .pd-subtitle { font-size:.88rem; color:#b87333; font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin-bottom:.35rem; }
+    .pd-info .pd-tagline-big { font-size:1.1rem; font-weight:800; color:#1a3566; margin-bottom:.8rem; letter-spacing:.02em; }
+    .pd-info .pd-desc { font-size:.9rem; color:var(--text-mid); margin-bottom:1.4rem; line-height:1.65; }
+    .pd-price-row { display:flex; align-items:center; gap:1.2rem; margin-bottom:1.2rem; flex-wrap:wrap; }
+    .pd-price { font-size:2rem; font-weight:900; color:var(--black); }
+    .pd-badge { background:#1a3566; color:white; font-size:.72rem; font-weight:700; padding:.3rem .8rem; border-radius:50px; letter-spacing:.07em; text-transform:uppercase; }
+    .pd-badge-cu { background:#b87333; color:white; font-size:.72rem; font-weight:700; padding:.3rem .8rem; border-radius:50px; letter-spacing:.07em; text-transform:uppercase; }
+    .pd-atc { display:block; width:100%; background:var(--black); color:white; text-align:center; padding:.9rem; border:none; border-radius:8px; font-size:1rem; font-weight:700; cursor:pointer; transition:opacity .2s; margin-bottom:.8rem; }
+    .pd-atc:hover { opacity:.82; }
+    .pd-atc.added { background:#1a6e3c; }
+    .pd-fda-bar { background:#fff3cd; border:1px solid #ffc107; border-radius:8px; padding:.75rem 1rem; font-size:.78rem; color:#856404; font-weight:600; }
+
+    /* KEY BENEFITS STRIP */
+    .kb-strip { background:#1a3566; padding:2rem 1.5rem; }
+    .kb-grid { max-width:1000px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
+    @media(max-width:700px){ .kb-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:420px){ .kb-grid{ grid-template-columns:1fr; } }
+    .kb-item { display:flex; align-items:flex-start; gap:.8rem; }
+    .kb-icon { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
+    .kb-item h4 { color:white; font-size:.82rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; margin-bottom:.25rem; }
+    .kb-item p  { color:rgba(255,255,255,.6); font-size:.78rem; line-height:1.45; }
+
+    /* SECTIONS */
+    .pd-section { max-width:1000px; margin:0 auto; padding:2.8rem 1.5rem; }
+    .pd-section h2 { font-size:1.25rem; font-weight:900; color:var(--black); text-transform:uppercase; letter-spacing:.08em; margin-bottom:1.2rem; padding-bottom:.6rem; border-bottom:3px solid #b87333; }
+
+    /* Why GHK-Cu pills */
+    .why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-bottom:1.5rem; }
+    @media(max-width:640px){ .why-grid{ grid-template-columns:1fr; } }
+    .why-card { background:white; border:1px solid var(--border); border-radius:12px; padding:1.1rem; display:flex; align-items:flex-start; gap:.8rem; }
+    .why-icon { font-size:1.4rem; flex-shrink:0; }
+    .why-card h4 { font-size:.83rem; font-weight:800; color:#1a3566; margin-bottom:.3rem; }
+    .why-card p  { font-size:.78rem; color:var(--text-mid); line-height:1.45; }
+
+    /* How it works */
+    .hiw-flow { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; }
+    @media(max-width:640px){ .hiw-flow{ grid-template-columns:repeat(2,1fr); } }
+    .hiw-step { background:white; border:1px solid var(--border); border-radius:12px; padding:1.1rem; text-align:center; }
+    .hiw-num { width:32px; height:32px; background:#1a3566; color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.82rem; font-weight:800; margin:0 auto .7rem; }
+    .hiw-step p { font-size:.8rem; color:var(--text-mid); line-height:1.45; }
+    .signal-note { background:#1a3566; color:white; border-radius:10px; padding:1rem 1.4rem; font-size:.85rem; margin-top:1.2rem; line-height:1.6; font-style:italic; }
+
+    /* Research grid */
+    .research-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.2rem; }
+    @media(max-width:600px){ .research-grid{ grid-template-columns:1fr; } }
+    .research-card { background:white; border:1px solid var(--border); border-radius:12px; padding:1.2rem; }
+    .rc-highlight { font-size:.75rem; font-weight:800; color:#b87333; text-transform:uppercase; letter-spacing:.05em; margin-bottom:.3rem; }
+    .research-card h4 { font-size:.85rem; font-weight:800; color:#1a3566; margin-bottom:.4rem; }
+    .research-card p { font-size:.8rem; color:var(--text-mid); line-height:1.5; }
+    .sources-note { font-size:.72rem; color:var(--text-light); margin-top:1rem; font-style:italic; }
+
+    /* Dosage */
+    .dosage-cols { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
+    @media(max-width:680px){ .dosage-cols{ grid-template-columns:1fr; } }
+    .dosage-card { background:white; border:2px solid var(--border); border-radius:12px; padding:1.3rem; }
+    .dosage-card.featured { border-color:#1a3566; }
+    .dosage-card h4 { font-size:.8rem; font-weight:800; text-transform:uppercase; letter-spacing:.07em; margin-bottom:.8rem; color:#1a3566; }
+    .dosage-amount { font-size:1.4rem; font-weight:900; color:var(--black); margin-bottom:.3rem; }
+    .dosage-card ul { padding-left:0; display:flex; flex-direction:column; gap:.35rem; }
+    .dosage-card ul li { font-size:.82rem; color:var(--text-mid); display:flex; align-items:center; gap:.4rem; }
+    .dosage-card ul li::before { content:'•'; color:#b87333; font-weight:900; }
+    .cycle-note { background:#e8f0fe; border:1px solid #b3c6f7; border-radius:8px; padding:.8rem 1rem; font-size:.82rem; color:#1a3a8a; margin-top:1rem; }
+
+    /* Application methods */
+    .admin-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; }
+    @media(max-width:640px){ .admin-grid{ grid-template-columns:repeat(2,1fr); } }
+    .admin-card { background:white; border:1px solid var(--border); border-radius:10px; padding:1rem; text-align:center; }
+    .admin-card .a-icon { font-size:1.6rem; margin-bottom:.5rem; }
+    .admin-card h4 { font-size:.75rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:#1a3566; margin-bottom:.3rem; }
+    .admin-card p  { font-size:.75rem; color:var(--text-mid); line-height:1.4; }
+    .stable-note { background:#d1ecf1; border:1px solid #bee5eb; border-radius:8px; padding:.7rem 1rem; font-size:.8rem; color:#0c5460; margin-top:1rem; font-weight:600; }
+
+    /* Ideal for */
+    .ideal-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:.7rem; }
+    @media(max-width:480px){ .ideal-grid{ grid-template-columns:1fr; } }
+    .ideal-item { display:flex; align-items:center; gap:.6rem; background:white; border:1px solid var(--border); border-radius:8px; padding:.75rem 1rem; font-size:.87rem; font-weight:500; }
+    .ideal-item::before { content:'✓'; color:#b87333; font-weight:900; font-size:1rem; }
+
+    /* Safety */
+    .safety-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; align-items:start; }
+    @media(max-width:580px){ .safety-grid{ grid-template-columns:1fr; } }
+    .safety-good { background:#d4edda; border:1px solid #c3e6cb; border-radius:12px; padding:1.2rem; }
+    .safety-good h4 { color:#155724; font-size:.85rem; font-weight:800; margin-bottom:.7rem; text-transform:uppercase; }
+    .safety-good ul { display:flex; flex-direction:column; gap:.4rem; }
+    .safety-good ul li { font-size:.83rem; color:#155724; display:flex; align-items:center; gap:.5rem; }
+    .safety-good ul li::before { content:'✅'; }
+    .biocompat-box { background:#1a3566; color:white; border-radius:12px; padding:1.3rem; }
+    .biocompat-box h4 { color:#f0c070; font-size:.88rem; font-weight:800; margin-bottom:.5rem; text-transform:uppercase; }
+    .biocompat-box p { font-size:.84rem; color:rgba(255,255,255,.8); line-height:1.55; }
+
+    /* Tagline banner */
+    .tagline-banner { background:#1a3566; padding:2rem 1.5rem; text-align:center; }
+    .tagline-banner h3 { color:white; font-size:clamp(1rem,2.5vw,1.4rem); font-weight:900; letter-spacing:.04em; }
+    .tagline-banner .sub-tag { color:#f0c070; font-size:1rem; font-weight:700; margin-top:.3rem; }
+    .tagline-banner p  { color:rgba(255,255,255,.7); font-size:.9rem; margin-top:.4rem; }
+
+    /* Disclaimer */
+    .final-disclaimer { background:#1a1a1a; color:rgba(255,255,255,.75); padding:1.5rem; font-size:.78rem; line-height:1.7; text-align:center; }
+    .final-disclaimer strong { color:white; }
+
+    /* Back link */
+    .back-link { display:inline-flex; align-items:center; gap:.4rem; font-size:.88rem; font-weight:600; color:var(--text-mid); padding:.5rem 0; transition:color .2s; }
+    .back-link:hover { color:var(--black); }
+
+    /* Molecule badge */
+    .molecule-badges { display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:1rem; }
+    .mol-badge { background:#e8f0fe; border:1px solid #b3c6f7; border-radius:6px; padding:.3rem .7rem; font-size:.75rem; font-weight:700; color:#1a3566; letter-spacing:.04em; }
+    .mol-badge.cu { background:#fff0d6; border-color:#e0a830; color:#9a5a00; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="header-inner">
+    <button class="hamburger" id="menuBtn"><span></span><span></span><span></span></button>
+    <a href="index.html" class="logo">
+      <div class="logo-img-wrap" style="background:transparent;padding:0;border-radius:0;">
+        <img src="61205B8A-CA41-4D01-BDCD-774BFB032CE1.png" alt="Helix-Pharm" class="logo-img"
+             style="height:54px;width:54px;border-radius:50%;object-fit:cover;display:block;">
+      </div>
+    </a>
+    <button class="cart-btn" id="cartBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- MENU -->
+<div class="menu-overlay" id="menuOverlay"></div>
+<nav class="slide-menu" id="slideMenu">
+  <div class="slide-menu-header">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" stroke="#888" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      <input type="text" placeholder="Search for...">
+    </div>
+    <button class="menu-close" id="menuClose">✕</button>
+  </div>
+  <div class="slide-menu-links">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop All</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="pd-hero">
+  <div class="pd-hero-inner">
+    <div class="pd-vial-wrap">
+      <svg width="200" height="320" viewBox="0 0 110 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="ghkg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#e8e8e8;stop-opacity:1"/>
+            <stop offset="40%" style="stop-color:#f8f8f8;stop-opacity:1"/>
+            <stop offset="100%" style="stop-color:#c8c8c8;stop-opacity:1"/>
+          </linearGradient>
+          <linearGradient id="ghkc" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#9a9a9a"/>
+            <stop offset="45%" style="stop-color:#d5d5d5"/>
+            <stop offset="100%" style="stop-color:#9a9a9a"/>
+          </linearGradient>
+          <linearGradient id="ghklb" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#1a3566"/>
+            <stop offset="100%" style="stop-color:#0d2244"/>
+          </linearGradient>
+          <linearGradient id="ghksh" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgba(255,255,255,0.5)"/>
+            <stop offset="100%" style="stop-color:rgba(255,255,255,0)"/>
+          </linearGradient>
+        </defs>
+        <!-- vial body — clear glass look -->
+        <rect x="22" y="28" width="66" height="142" rx="6" fill="url(#ghkg)" stroke="#b0b0b0" stroke-width="1.2"/>
+        <!-- glass shine -->
+        <rect x="24" y="29" width="10" height="140" rx="4" fill="url(#ghksh)"/>
+        <!-- label area -->
+        <rect x="25" y="52" width="60" height="90" rx="3" fill="white" stroke="#ddd" stroke-width="0.5"/>
+        <!-- blue label band top -->
+        <rect x="25" y="52" width="60" height="16" rx="3" fill="url(#ghklb)"/>
+        <text x="55" y="63" text-anchor="middle" fill="white" font-size="5.5" font-weight="700" letter-spacing="0.6" font-family="Arial,sans-serif">HELIX-PHARM</text>
+        <!-- molecule symbols on white -->
+        <circle cx="38" cy="78" r="5" fill="#1a3566" opacity="0.15"/>
+        <circle cx="55" cy="74" r="4" fill="#b87333" opacity="0.2"/>
+        <circle cx="72" cy="78" r="5" fill="#2e7d32" opacity="0.15"/>
+        <line x1="38" y1="78" x2="55" y2="74" stroke="#1a3566" stroke-width="1" opacity="0.3"/>
+        <line x1="55" y1="74" x2="72" y2="78" stroke="#1a3566" stroke-width="1" opacity="0.3"/>
+        <text x="38" y="82" text-anchor="middle" fill="#1a3566" font-size="5" font-weight="700" font-family="Arial,sans-serif">Gly</text>
+        <text x="55" y="78" text-anchor="middle" fill="#9a5a00" font-size="5" font-weight="700" font-family="Arial,sans-serif">His</text>
+        <text x="72" y="82" text-anchor="middle" fill="#155724" font-size="5" font-weight="700" font-family="Arial,sans-serif">Lys</text>
+        <!-- Cu badge -->
+        <circle cx="55" cy="95" r="8" fill="#b87333"/>
+        <text x="55" y="98.5" text-anchor="middle" fill="white" font-size="7" font-weight="900" font-family="Arial,sans-serif">Cu²⁺</text>
+        <!-- product name -->
+        <text x="55" y="115" text-anchor="middle" fill="#1a1a1a" font-size="11" font-weight="900" font-family="Arial,sans-serif">GHK-Cu</text>
+        <text x="55" y="126" text-anchor="middle" fill="#444" font-size="6.5" font-family="Arial,sans-serif">COPPER PEPTIDE</text>
+        <!-- blue badge on label -->
+        <rect x="30" y="130" width="50" height="9" rx="2" fill="#1a3566"/>
+        <text x="55" y="137" text-anchor="middle" fill="white" font-size="5" font-weight="700" letter-spacing="0.3" font-family="Arial,sans-serif">REJUVENATE. REPAIR.</text>
+        <text x="55" y="145" text-anchor="middle" fill="#888" font-size="5.5" letter-spacing="0.4" font-family="Arial,sans-serif">5 mg · RESEARCH USE ONLY</text>
+        <!-- cap -->
+        <rect x="26" y="12" width="58" height="19" rx="4" fill="url(#ghkc)"/>
+        <rect x="22" y="25" width="66" height="8" rx="2" fill="url(#ghkc)"/>
+        <rect x="32" y="10" width="46" height="5" rx="2.5" fill="#d5d5d5"/>
+      </svg>
+    </div>
+
+    <div class="pd-info">
+      <a href="shop.html" class="back-link">← Back to Shop</a>
+      <div class="pd-subtitle">The Copper Peptide · Science-Backed Rejuvenation</div>
+      <h1>GHK-Cu</h1>
+      <div class="pd-tagline-big">REJUVENATE. REPAIR. REGENERATE.</div>
+      <div class="molecule-badges">
+        <span class="mol-badge">Gly – His – Lys</span>
+        <span class="mol-badge cu">Cu²⁺ Copper</span>
+        <span class="mol-badge">5mg</span>
+      </div>
+      <p class="pd-desc">GHK-Cu (Glycyl-L-Histidyl-L-Lysine Copper) is a naturally occurring copper peptide found in human plasma, saliva, and urine. It plays a key role in tissue repair, collagen synthesis, and cellular regeneration.</p>
+      <div class="pd-price-row">
+        <span class="pd-price">$120.00</span>
+        <span class="pd-badge">Research Use Only</span>
+        <span class="pd-badge-cu">Copper Peptide</span>
+      </div>
+      <button class="pd-atc" id="pdAtc" data-name="GLOW" data-price="120">Add To Cart</button>
+      <div class="pd-fda-bar">⚠️ NOT APPROVED BY THE FDA — FOR RESEARCH USE ONLY. Not for human consumption.</div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY BENEFITS STRIP -->
+<section class="kb-strip">
+  <div class="kb-grid">
+    <div class="kb-item">
+      <div class="kb-icon" style="background:#2e7d32;">🧬</div>
+      <div>
+        <h4>Boosts Collagen &amp; Elastin</h4>
+        <p>Stimulates collagen, elastin, and glycosaminoglycan (GAG) production for firmer, more youthful skin.</p>
+      </div>
+    </div>
+    <div class="kb-item">
+      <div class="kb-icon" style="background:#0d7a5a;">🩹</div>
+      <div>
+        <h4>Accelerates Wound Healing</h4>
+        <p>Enhances tissue repair, reduces inflammation, and improves healing quality and speed.</p>
+      </div>
+    </div>
+    <div class="kb-item">
+      <div class="kb-icon" style="background:#6a1b9a;">🛡️</div>
+      <div>
+        <h4>Powerful Antioxidant</h4>
+        <p>Neutralizes free radicals and protects cells from oxidative stress and environmental damage.</p>
+      </div>
+    </div>
+    <div class="kb-item">
+      <div class="kb-icon" style="background:#1565c0;">💆</div>
+      <div>
+        <h4>Supports Hair Growth</h4>
+        <p>Prolongs the growth phase of hair follicles and may improve hair thickness and density.</p>
+      </div>
+    </div>
+    <div class="kb-item">
+      <div class="kb-icon" style="background:#e65100;">✨</div>
+      <div>
+        <h4>Improves Skin Quality</h4>
+        <p>Reduces fine lines, wrinkles, hyperpigmentation, and enhances skin tone and elasticity.</p>
+      </div>
+    </div>
+    <div class="kb-item">
+      <div class="kb-icon" style="background:#00838f;">🔬</div>
+      <div>
+        <h4>Anti-Inflammatory</h4>
+        <p>Regulates cytokines and reduces inflammation associated with aging and skin conditions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IS GHK-Cu -->
+<section style="background:#fafafa;padding:1px 0;">
+  <div class="pd-section">
+    <h2>What Is GHK-Cu?</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🌿</div>
+        <div>
+          <h4>Naturally Occurring</h4>
+          <p>Found in the body and essential for normal healing processes. Levels decline significantly with age.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔬</div>
+        <div>
+          <h4>Backed by Decades of Research</h4>
+          <p>Extensively studied for its role in wound healing, skin remodeling, and hair growth.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">✅</div>
+        <div>
+          <h4>Multi-Benefit Peptide</h4>
+          <p>Supports skin, hair, and overall tissue health at the cellular level through gene regulation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="pd-section">
+    <h2>How It Works</h2>
+    <div class="hiw-flow">
+      <div class="hiw-step">
+        <div class="hiw-num">1</div>
+        <p><strong>Binds to receptors</strong> on cells, acting as a natural signaling molecule.</p>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">2</div>
+        <p><strong>Stimulates cell migration</strong> &amp; proliferation at sites of damage or aging.</p>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">3</div>
+        <p><strong>Promotes collagen &amp; ECM remodeling</strong>, rebuilding the extracellular matrix.</p>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">4</div>
+        <p><strong>Results in repair, regeneration</strong> &amp; visible rejuvenation of tissue.</p>
+      </div>
+    </div>
+    <div class="signal-note">
+      "GHK-Cu is a natural signaling molecule that helps regulate gene expression and promotes the body's own repair mechanisms."
+    </div>
+  </div>
+</section>
+
+<!-- PROVEN BENEFITS IN RESEARCH -->
+<section style="background:#fafafa;padding:1px 0;">
+  <div class="pd-section">
+    <h2>Proven Benefits in Research</h2>
+    <div class="research-grid">
+      <div class="research-card">
+        <div class="rc-highlight">↑ Up to 4x increase</div>
+        <h4>Collagen Production</h4>
+        <p>In vitro studies show significant increase in collagen production in human fibroblasts, leading to firmer skin structure.</p>
+      </div>
+      <div class="research-card">
+        <div class="rc-highlight">↑ Faster Closure</div>
+        <h4>Wound Healing Acceleration</h4>
+        <p>Animal studies demonstrate faster re-epithelialization and greater tensile strength with GHK-Cu treatment.</p>
+      </div>
+      <div class="research-card">
+        <div class="rc-highlight">↑ Increase in Hair Count</div>
+        <h4>Hair Growth Support</h4>
+        <p>Studies show GHK-Cu extends the anagen (growth) phase of hair follicles in skin studies, improving density.</p>
+      </div>
+      <div class="research-card">
+        <div class="rc-highlight">↑ Reduces Oxidative Stress</div>
+        <h4>Antioxidant Capacity</h4>
+        <p>GHK-Cu scavenges harmful free radicals and enhances the body's antioxidant defenses at the cellular level.</p>
+      </div>
+    </div>
+    <div class="sources-note">Sources: PubMed Id: 14671100, 15602560, 18413416, 23631839, 28287811, 32793300 and more.</div>
+  </div>
+</section>
+
+<!-- DOSAGE GUIDELINES -->
+<section>
+  <div class="pd-section">
+    <h2>Dosage Guidelines (Research Use)</h2>
+    <div class="dosage-cols">
+      <div class="dosage-card">
+        <h4>💧 Topical (Skin)</h4>
+        <div class="dosage-amount">20–200 mcg</div>
+        <ul>
+          <li>1–2 times daily</li>
+          <li>Concentration: 0.02%–0.2%</li>
+          <li>Applied directly to skin</li>
+        </ul>
+      </div>
+      <div class="dosage-card featured">
+        <h4>🔬 Microneedling / Mesotherapy</h4>
+        <div class="dosage-amount">0.2–1 mg</div>
+        <ul>
+          <li>Per session</li>
+          <li>Dilute in sterile water or saline</li>
+          <li>Enhanced absorption</li>
+        </ul>
+      </div>
+      <div class="dosage-card">
+        <h4>💉 Systemic (Research Only)</h4>
+        <div class="dosage-amount">100–500 mcg</div>
+        <ul>
+          <li>Per day</li>
+          <li>Subcutaneous injection</li>
+          <li>Research use only</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cycle-note">⏱️ <strong>Cycles:</strong> Commonly used for 8–12 weeks, followed by a break of 2–4 weeks.</div>
+  </div>
+</section>
+
+<!-- APPLICATION METHODS -->
+<section style="background:#fafafa;padding:1px 0;">
+  <div class="pd-section">
+    <h2>Application Methods</h2>
+    <div class="admin-grid">
+      <div class="admin-card">
+        <div class="a-icon">💧</div>
+        <h4>Topical Serums</h4>
+        <p>Easy daily use for skin rejuvenation and maintenance.</p>
+      </div>
+      <div class="admin-card">
+        <div class="a-icon">🪡</div>
+        <h4>Microneedling</h4>
+        <p>Enhances absorption and stimulates collagen further for advanced results.</p>
+      </div>
+      <div class="admin-card">
+        <div class="a-icon">💉</div>
+        <h4>Mesotherapy</h4>
+        <p>Delivers peptide deeper for targeted skin improvement and tissue repair.</p>
+      </div>
+      <div class="admin-card">
+        <div class="a-icon">🔗</div>
+        <h4>Combination</h4>
+        <p>Pairs well with other peptides and growth factors for synergistic effects.</p>
+      </div>
+    </div>
+    <div class="stable-note">💡 GHK-Cu is stable in solution, non-toxic, and well tolerated in most research settings.</div>
+  </div>
+</section>
+
+<!-- IDEAL FOR -->
+<section>
+  <div class="pd-section">
+    <h2>Ideal For</h2>
+    <div class="ideal-grid">
+      <div class="ideal-item">Anti-aging &amp; wrinkle reduction</div>
+      <div class="ideal-item">Skin laxity &amp; elasticity</div>
+      <div class="ideal-item">Acne scars &amp; skin texture</div>
+      <div class="ideal-item">Wound &amp; injury healing</div>
+      <div class="ideal-item">Hair thinning &amp; loss (research)</div>
+      <div class="ideal-item">Post-procedure skin recovery</div>
+    </div>
+  </div>
+</section>
+
+<!-- SAFETY & TOLERABILITY -->
+<section style="background:#fafafa;padding:1px 0;">
+  <div class="pd-section">
+    <h2>Safety &amp; Tolerability</h2>
+    <div class="safety-grid">
+      <div class="safety-good">
+        <h4>Excellent Safety Profile</h4>
+        <ul>
+          <li>Non-toxic in studies</li>
+          <li>Minimal risk of irritation</li>
+          <li>Suitable for most skin types</li>
+          <li>Not genotoxic or mutagenic</li>
+          <li>Well tolerated in long-term studies</li>
+        </ul>
+      </div>
+      <div class="biocompat-box">
+        <h4>Natural. Biocompatible. Effective.</h4>
+        <p>GHK-Cu works with your body to restore, repair, and rejuvenate at the cellular level. As a peptide naturally found in human plasma, it has inherent biocompatibility and an established safety record in research settings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TAGLINE BANNER -->
+<div class="tagline-banner">
+  <h3>SCIENCE-BACKED. NATURE-INSPIRED. RESULTS-DRIVEN.</h3>
+  <div class="sub-tag">RESEARCH. REPAIR. RENEW.</div>
+  <p>Harness the power of GHK-Cu for visible, lasting results.</p>
+</div>
+
+<!-- IMPORTANT NOTES -->
+<section>
+  <div class="pd-section">
+    <h2>Important Notes</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
+      <div style="background:white;border:1px solid var(--border);border-radius:12px;padding:1.2rem;">
+        <h4 style="font-size:.85rem;font-weight:800;color:var(--black);margin-bottom:.6rem;text-transform:uppercase;">Research Use Only</h4>
+        <p style="font-size:.82rem;color:var(--text-mid);line-height:1.55;">GHK-Cu is not approved by the FDA. For Research Use Only — Not for Human Consumption. Consult a qualified healthcare professional before use.</p>
+      </div>
+      <div style="background:white;border:1px solid var(--border);border-radius:12px;padding:1.2rem;">
+        <h4 style="font-size:.85rem;font-weight:800;color:var(--black);margin-bottom:.6rem;text-transform:uppercase;">Quality &amp; Storage</h4>
+        <p style="font-size:.82rem;color:var(--text-mid);line-height:1.55;">Quality, purity, and proper storage are essential. Store lyophilized powder at -20°C. After reconstitution, refrigerate at 2–8°C and use within 30 days.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL DISCLAIMER -->
+<div class="final-disclaimer">
+  <strong>IMPORTANT DISCLAIMER:</strong> GHK-Cu is not approved by the FDA. For Research Use Only — Not for human consumption. All products on this site are for Research and Development use only. The statements made within this website have not been evaluated by the US Food and Drug Administration.
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="61205B8A-CA41-4D01-BDCD-774BFB032CE1.png" alt="Helix-Pharm" class="footer-logo-img">
+  </div>
+  <p class="tagline">We take pride in treating every client,<br>large or small, with the utmost regard.</p>
+  <div class="footer-cols">
+    <div class="footer-col">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop All</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <div class="support-email">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" fill="none" stroke="#888" stroke-width="2"/></svg>
+        info@helix-pharm.com
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 helix-pharm.com. All Rights Reserved.</p>
+    <div class="footer-legal">
+      <p>All products on this site are for Research, Development use only. Products are Not for Human consumption of any kind.</p>
+      <p>Helix-Pharm is a chemical supplier. Not a compounding pharmacy or outsourcing facility as defined under 503A/503B of the Federal Food, Drug, and Cosmetic act.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <span>Your Cart</span>
+    <button class="cart-x" id="cartClose">✕</button>
+  </div>
+  <div class="cart-body" id="cartBody"><p class="cart-empty-msg">Your cart is empty.</p></div>
+  <div class="cart-foot">
+    <div class="cart-subtotal"><span>Subtotal</span><span id="cartTotal">$0.00</span></div>
+    <button class="checkout-btn">Checkout</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
+<script src="js/main.js"></script>
+<script>
+  document.getElementById('pdAtc').addEventListener('click', function() {
+    const name = this.dataset.name;
+    const price = parseFloat(this.dataset.price);
+    if (typeof addToCart === 'function') {
+      addToCart(name, price);
+      this.textContent = 'Added!';
+      this.classList.add('added');
+      setTimeout(() => { this.textContent = 'Add To Cart'; this.classList.remove('added'); }, 2000);
+    }
+  });
+</script>
+</body>
+</html>
