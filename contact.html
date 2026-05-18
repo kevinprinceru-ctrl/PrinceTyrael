@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — Helix-Pharm</title>
+  <meta name="description" content="Contact Helix-Pharm. We're here to help with your research needs.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="header-inner">
+    <button class="hamburger" id="menuBtn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="index.html" class="logo">
+      <svg class="logo-hex" viewBox="0 0 80 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="13,1 25,1 31,11.5 25,22 13,22 7,11.5"  fill="none" stroke="white" stroke-width="1.8"/>
+        <polygon points="31,1 43,1 49,11.5 43,22 31,22 25,11.5" fill="none" stroke="white" stroke-width="1.8"/>
+        <polygon points="49,1 61,1 67,11.5 61,22 49,22 43,11.5" fill="none" stroke="white" stroke-width="1.8"/>
+        <polygon points="22,20 34,20 40,30.5 34,41 22,41 16,30.5" fill="none" stroke="white" stroke-width="1.8"/>
+        <polygon points="40,20 52,20 58,30.5 52,41 40,41 34,30.5" fill="none" stroke="white" stroke-width="1.8"/>
+      </svg>
+      <div class="logo-wordmark">
+        <span class="logo-name">HELIX-PHARM</span>
+        <span class="logo-sub">· · ·</span>
+      </div>
+    </a>
+    <button class="cart-btn" id="cartBtn" aria-label="Cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- SLIDE-OUT MENU -->
+<div class="menu-overlay" id="menuOverlay"></div>
+<nav class="slide-menu" id="slideMenu">
+  <div class="slide-menu-header">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" stroke="#888" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      <input type="text" placeholder="Search for...">
+    </div>
+    <button class="menu-close" id="menuClose">✕</button>
+  </div>
+  <div class="slide-menu-links">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop All</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main>
+  <div class="contact-section">
+    <h1>Contact Us</h1>
+    <p class="sub">Have a question? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" placeholder="John" required>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
+      </div>
+
+      <div class="consent-row">
+        <input type="checkbox" id="consent" name="consent">
+        <label for="consent">
+          By providing your phone number, you consent to receive text messages from Helix-Pharm for purposes related to our services. Message frequency may vary. Message and Data Rates may apply. Reply HELP for help or STOP to unsubscribe. See our privacy policy (<a href="#">Privacy Policy</a>) and our terms and conditions page (<a href="#">Terms and Conditions</a>).
+        </label>
+      </div>
+
+      <button type="submit" class="btn-black">Submit</button>
+    </form>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <svg width="60" height="32" viewBox="0 0 80 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="13,1 25,1 31,11.5 25,22 13,22 7,11.5"  fill="none" stroke="#1a1a1a" stroke-width="1.8"/>
+      <polygon points="31,1 43,1 49,11.5 43,22 31,22 25,11.5" fill="none" stroke="#1a1a1a" stroke-width="1.8"/>
+      <polygon points="49,1 61,1 67,11.5 61,22 49,22 43,11.5" fill="none" stroke="#1a1a1a" stroke-width="1.8"/>
+      <polygon points="22,20 34,20 40,30.5 34,41 22,41 16,30.5" fill="none" stroke="#1a1a1a" stroke-width="1.8"/>
+      <polygon points="40,20 52,20 58,30.5 52,41 40,41 34,30.5" fill="none" stroke="#1a1a1a" stroke-width="1.8"/>
+    </svg>
+    <span class="logo-name" style="color:#1a1a1a;font-size:1.3rem;letter-spacing:.18em">HELIX-PHARM</span>
+    <span class="logo-sub" style="color:#888;letter-spacing:.3em">· · ·</span>
+  </div>
+  <p class="tagline">We take pride in treating every client,<br>large or small, with the utmost regard.</p>
+  <div class="footer-cols">
+    <div class="footer-col">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop All</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <div class="support-email">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" fill="none" stroke="#888" stroke-width="2"/></svg>
+        info@helix-pharm.com
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 helix-pharm.com. All Rights Reserved.</p>
+    <div class="footer-legal">
+      <p>All products on this site are for Research, Development use only. Products are Not for Human consumption of any kind. The statements made within this website have not been evaluated by the US Food and Drug Administration. The statements and the products of this company are not intended to diagnose, treat, cure or prevent any disease.</p>
+      <p>Helix-Pharm is a chemical supplier. Helix-Pharm is not a compounding pharmacy or chemical compounding facility as defined under 503A of the Federal Food, Drug, and Cosmetic act. Helix-Pharm is not an outsourcing facility as defined under 503B of the Federal Food, Drug, and Cosmetic act.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <span>Your Cart</span>
+    <button class="cart-x" id="cartClose">✕</button>
+  </div>
+  <div class="cart-body" id="cartBody"><p class="cart-empty-msg">Your cart is empty.</p></div>
+  <div class="cart-foot">
+    <div class="cart-subtotal"><span>Subtotal</span><span id="cartTotal">$0.00</span></div>
+    <button class="checkout-btn">Checkout</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
+<script src="js/main.js"></script>
+</body>
+</html>
