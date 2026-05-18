@@ -74,17 +74,17 @@ ul  { list-style: none; }
   cursor: pointer;
 }
 .logo-img-wrap {
-  background: var(--white);
-  border-radius: 10px;
-  padding: 4px 12px;
+  background: transparent;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .logo-img {
-  height: 46px;
-  width: auto;
-  object-fit: contain;
+  height: 54px;
+  width: 54px;
+  object-fit: cover;
+  border-radius: 50%;
   display: block;
 }
 
@@ -470,9 +470,10 @@ main { padding-top: 64px; }
 
 /* Footer logo image */
 .footer-logo-img {
-  height: 90px;
-  width: auto;
-  object-fit: contain;
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 50%;
   display: block;
   margin-bottom: 1rem;
 }
